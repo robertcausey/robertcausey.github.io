@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Preparation of Biotinylated MAB211p </TITLE>
+</HEAD>
+<BODY bgcolor=white>
+ <BR><IMG SRC=pixelshi.gif WIDTH=40 HEIGHT=3000 align=left><IMG SRC=pixelshi.gif WIDTH=40 HEIGHT=3000 align=right>
+<H3> <Center> Reagent Preparation Sheet.<P>Preparation of Biotinylated MAB211p, SeM detector antibody in <A href=semelisachecklist.htm> ELISA protocol</A>.
+</Center></H3> 
+<B>Date prepared:</B><P>
+<B>By:</B>
+<OL type=I>
+<B><LI>Hazard Assessment</B><P>
+To protect yourself from any possible hazards associated with this task wear eye protection. You should also wear latex, nitrile, or vinyl gloves and a lab coat with long sleeves. To protect your legs and feet wear closed shoes and long trowsers. Do not wear sandles, shorts or a short skirt. Wash your hands before eating and when leaving the laboratory. You should review the MSDS for any chemical used in this procedure. In case of a spill with a toxic chemical remove all contaminated clothing and wash affected areas with copious quantities of water. Check location of the nearest safety shower. Eyes should be washed copiously for 15 minutes. <P>
+<B><LI>Reagent</B><BR>
+Biotin conjugated MAB211p.
+<P>
+<B><LI>Purpose of reagent</B><BR>
+The monoclonal IgG antibody used in detection of SeM antigen of <I>Streptococcus equi </I> subspecies <I> equi</I>. In <a href=semelisachecklist.htm>ELISA format </A>, it is used in conjunction with MAB212, the latter being a capture antibody to concentrate target on the ELISA plate.
+<P>
+<B><LI>Reconstitution and storage of Biotin</B><BR>
+
+<Table>
+<TR><TD>Dissolve vial of biotin (10mg) in 250 ul of DMSO. This gives a final concentration of 40 mg/mL
+</TD><TD> ____</TD><TD></TD></TR>
+<TR><TD>Make 50 ul aliquots of biotin at 40 mg/mL (i.e. 5 aliquots at 50 ul) and store at - 20 C </TD><TD> ____</TD><TD></TD></TR>
+</Table><P>
+<B><LI>Biotinylation procedure</B><BR>
+<Table> 
+<TR><TD>In a 1.5 mL microfuge tube combine 12 (50 ul) vials of MAB211p (tracer antibody) (12 X 75ug = 900ug of MAB211p and 12 X 50ul = 600 ul total volume) </TD><TD> ____ </TD><TD></TD></TR>
+<TR><TD> To this add 5 ul of biotin (5 ul X 40 mg/mL = 0.2 mg)  </TD><TD> ____ </TD><TD></TD></TR>
+<TR><TD>Mix and incubate at room temperature for an hour </TD><TD> ____ </TD><TD></TD></TR>
+<TR><TD>Dialyse this volume (600 uL) against 0.15M PBS using a 2 mL Slide-A-Lyzer MINI Dialysis Device for 2 hours at room temperature, twice with  20 kD Molecular weight cut-off (20K MWCO). </TD><TD> ____ </TD><TD></TD></TR>
+<TR><TD>Reconstitute with PBS up to a volume of 900 uL (~1 mg/mL) and make 50 ul aliquots (each at ~1 mg/mL i.e. 50 ug) and freeze aliquots at -20 C. </TD><TD> ____ </TD><TD></TD></TR>
+<TR><TD>When ready to conduct ELISA, add 1 aliquot of biotinylated antibody (50 ug) to 10 mL of blocking buffer (0.15 M PBS with 1 % NFDM) to have a final concentration of 0.5 ug/mL of detector antibody in blocking buffer. </TD><TD> ____ </TD><TD></TD></TR>
+</TABLE>
+<P>
+<B><LI>Assessment of biotinylation using HABA/AVIDIN BIOTIN replacement assay</B><P>
+The assay provides a colometric assessment of displacement of HABA from its complex with AVIDIN by biotin. The HABA/AVIDIN complex is measured at A500, and its reduction in absorbance can be directly correlated to moles of HABA being replaced by biotin.<P> 
+<Table>
+<TR><TD>Reconstitute HABA/AVIDIN vial <A href=HABA-AVIDINrecon.pdf> (Sigma H 2153)</A> with 10 mL of deionized water.<BR>(Use needle and syringe.) </TD><TD></TD><TD align=left> ____ </TD><TD></TD></TR>
+<TR><TD>Label vial "exp" and date one month from today, store at 0-4 C </TD><TD></TD><TD align=left> ____ </TD><TD></TD></TR>
+<TR><TD>Add 180 ul of HABA/AVIDIN solution to well. Shake 5 min </TD><TD></TD><TD align=left> ____ </TD><TD></TD></TR>
+<TR><TD>Record absorbance at 500 nm </TD><TD></TD><TD align=left>____</TD><TD>A500 HA</TD></TR>
+<TR><TD>Record concentration of biotinylated MAB211p mg/mL</TD><TD></TD><TD align=left>____</TD><TD>mg/ml mgmlpro</TD></TR>
+<TR><TD>Add 20 ul of biotinylated MAB 211p to same well. Shake 5 min </TD><TD></TD><TD align=left> ____ </TD><TD></TD></TR>
+<TR><TD>Record absorbance at 500 nm </TD><TD></TD><TD align=left>____</TD><TD>A500HAB</TD></TR>
+<TR><TD>(If absorbance < 0.15 dilute sample and repeat assay)</TD><TD></TD><TD></TD></TR>
+<TR><TD>Calculate molar ratio of biotin to protein (target is 5 - 8)</TD><TD></TD><TD align=left> ____ </TD><TD><B>moles of  biotin per mole of protein</B></TD></TR>
+</Table>
+<B><LI>R code Calculations</B><P>
+In the formula below fill in values xxx for mgmlpro, A500HA, and A500HAB. The formula generates the biotin to protein molar ratio and an array with values including DA (difference in absorbance), mmol per mL of biotin (mmolmlbio), mmol per mL of protein (mmolmlpro) and the last value is also the biotin to protein molar ration (bio2pro).<P>
+
+<I>Formula for microplate</I><P>
+mgmlpro=xxx; A500HA=xxx; A500HAB=xxx;DA=(A500HA)-A500HAB; mmolmlbio=DA/(34000*0.5);mmolmlpro=mgmlpro/150000;bio2pro=(mmolmlbio*10)/mmolmlpro;bio2pro; rbind(mgmlpro,A500HA, A500HAB, DA, mmolmlpro,mmolmlbio,bio2pro)#for microplate<P> In R paste the text after the command prompt ">". For example:<P>
+> mgmlpro=0.69; A500HA=0.904; A500HAB=0.771;DA=(A500HA)-A500HAB; mmolmlbio=DA/(34000*0.5);mmolmlpro=mgmlpro/150000;bio2pro=(mmolmlbio*10)/mmolmlpro;bio2pro; rbind(mgmlpro,A500HA, A500HAB, DA, mmolmlpro,mmolmlbio,bio2pro)#for microplate<P>
+[1] 17.00767<BR>
+<Table>
+<TR><TD></TD><TD>[,1]</TD></TR>
+<TR><TD>mgmlpro</TD>  <TD>6.900000e-01</TD></TR>
+<TR><TD>A500HA</TD>  <TD>9.040000e-01</TD></TR>
+<TR><TD>A500HAB</TD>  <TD>7.710000e-01</TD></TR>
+<TR><TD>DA</TD>  <TD>1.330000e-01</TD></TR>
+<TR><TD>mmolmlpro</TD>  <TD>4.600000e-06</TD></TR>
+<TR><TD>mmolmlbio</TD>  <TD>7.823529e-06</TD></TR>
+<TR><TD>bio2pro</TD>  <TD>1.700767e+01</TD></TR>
+</Table><P>
+<I>Formula for cuvette.</I><P>
+mgmlpro=xxx; A500HA=xxx; A500HAB=xxx;DA=(0.9*A500HA)-A500HAB; mmolmlbio=DA/(34000*1);mmolmlpro=mgmlpro/150000;bio2pro=(mmolmlbio*10)/mmolmlpro;bio2pro; rbind(mgmlpro,A500HA, A500HAB, DA, mmolmlpro,mmolmlbio,bio2pro)#for cuvette
+<P> Refer to instructions for <A href=HABA-AVIDIN.pdf> HABA/AVIDIN </A>for how to perform assay in a cuvette system. The formula is adjusted slightly to adjust for change in absorbance with addition of sample (0.9), and different pathwidth of cuvette (1 cm)  versus microtitre plate (0.5 cm)<P>
+<B><LI>Comments</B><P>
+<A href=biotin.pdf>Biotinamidocaproate N-Hydroxy-Succinimide ester</A> provides more detailed information about biotin<P>
+<A href=HABA-AVIDINrecon.pdf> (Sigma H 2153)</A> gives detailed information about the HABA/AVIDIN reagent from Sigma used in this protocol, including instructions on how to reconstitute and store reagent.<P>
+<A href=HABA-AVIDIN.pdf>HABA/AVIDIN </A> gives detailed explanation and background information on the assay, and how to perform calculations. But instructions on how to reconstitute the vial are not applicable to this protocol since we use a different product (Sigma H 2153)</A><P>
+<A href=dialysis.pdf>Slide-A-Lyzer</A> detailed explanation and background information for slide-alyzer dilaysis system<P>
+
+Ordering Information:<P> 
+
+www.Sigmaaldrich.com
+<blockquote>
+Biotin - Biotinamidohexanoic acid N-hydroxysuccinimide ester 10 mg # B2643-10MG $29.90<P>
+Dimethyl sulfoxide CHROMASOLV Plu # 34869-100ML $66.30 <P>
+HABA/Avidin Reagent lyophilized powder # H2153-1VL $39.50
+</blockquote>  
+www.piercenet.com
+<blockquote>
+Slide-A-Lyzer MINI Dialysis Device, 20 Kdalton Molecular Weight Cut-Off (20K MWCO), 2mL (pack of 25 devices) catalog # 88405 $220.
+</blockquote>
+<P>
+</OL>
+</BODY>
+</HTML>
+

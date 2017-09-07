@@ -1,0 +1,117 @@
+
+R version 3.1.1 (2014-07-10) -- "Sock it to Me"
+Copyright (C) 2014 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin13.1.0 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.65 (6784) x86_64-apple-darwin13.1.0]
+
+[Workspace restored from /Users/robertcausey/.RData]
+[History restored from /Users/robertcausey/.Rapp.history]
+#T0 W1
+> mgmlpro=1.5; A500HA=0.648; A500HAB=0.501;DA=(A500HA)-A500HAB; mmolmlbio=DA/(34000*0.5);mmolmlpro=mgmlpro/150000;bio2pro=(mmolmlbio*10)/mmolmlpro;bio2pro; rbind(mgmlpro,A500HA, A500HAB, DA, mmolmlpro,mmolmlbio,bio2pro)#for microplate
+[1] 8.647059
+                  [,1]
+mgmlpro   1.500000e+00
+A500HA    6.480000e-01
+A500HAB   5.010000e-01
+DA        1.470000e-01
+mmolmlpro 1.000000e-05
+mmolmlbio 8.647059e-06
+bio2pro   8.647059e+00
+
+#T1W1
+> mgmlpro=1.5; A500HA=0.66; A500HAB=0.401;DA=(A500HA)-A500HAB; mmolmlbio=DA/(34000*0.5);mmolmlpro=mgmlpro/150000;bio2pro=(mmolmlbio*10)/mmolmlpro;bio2pro; rbind(mgmlpro,A500HA, A500HAB, DA, mmolmlpro,mmolmlbio,bio2pro)#for microplate
+[1] 15.23529
+                  [,1]
+mgmlpro   1.500000e+00
+A500HA    6.600000e-01
+A500HAB   4.010000e-01
+DA        2.590000e-01
+mmolmlpro 1.000000e-05
+mmolmlbio 1.523529e-05
+bio2pro   1.523529e+01
+
+
+T2 W1
+> mgmlpro=1.5; A500HA=0.657; A500HAB=0.441;DA=(A500HA)-A500HAB; mmolmlbio=DA/(34000*0.5);mmolmlpro=mgmlpro/150000;bio2pro=(mmolmlbio*10)/mmolmlpro;bio2pro; rbind(mgmlpro,A500HA, A500HAB, DA, mmolmlpro,mmolmlbio,bio2pro)#for microplate
+[1] 12.70588
+                  [,1]
+mgmlpro   1.500000e+00
+A500HA    6.570000e-01
+A500HAB   4.410000e-01
+DA        2.160000e-01
+mmolmlpro 1.000000e-05
+mmolmlbio 1.270588e-05
+bio2pro   1.270588e+01
+
+T0 W2
+> mgmlpro=1.5; A500HA=0.654; A500HAB=0.468;DA=(A500HA)-A500HAB; mmolmlbio=DA/(34000*0.5);mmolmlpro=mgmlpro/150000;bio2pro=(mmolmlbio*10)/mmolmlpro;bio2pro; rbind(mgmlpro,A500HA, A500HAB, DA, mmolmlpro,mmolmlbio,bio2pro)#for microplate
+[1] 10.94118
+                  [,1]
+mgmlpro   1.500000e+00
+A500HA    6.540000e-01
+A500HAB   4.680000e-01
+DA        1.860000e-01
+mmolmlpro 1.000000e-05
+mmolmlbio 1.094118e-05
+bio2pro   1.094118e+01
+
+
+#T12 W2
+> mgmlpro=1; A500HA=0.662; A500HAB=0.66;DA=(A500HA)-A500HAB; mmolmlbio=DA/(34000*0.5);mmolmlpro=mgmlpro/150000;bio2pro=(mmolmlbio*10)/mmolmlpro;bio2pro; rbind(mgmlpro,A500HA, A500HAB, DA, mmolmlpro,mmolmlbio,bio2pro)#for microplate
+[1] 0.1764706
+                  [,1]
+mgmlpro   1.000000e+00
+A500HA    6.620000e-01
+A500HAB   6.600000e-01
+DA        2.000000e-03
+mmolmlpro 6.666667e-06
+mmolmlbio 1.176471e-07
+bio2pro   1.764706e-01
+
+#HABA/AVIDIN/BIOTIN absorbances
+> b=scan()
+1: 0.501
+2: 0.401
+3: 0.441
+4: 0.468
+5: 0.66
+6: 0.047
+7: 0.048
+8: 0.048
+9: 
+Read 8 items
+
+HABA/Avidin
+> a=scan()
+1: 0.648
+2: 0.66
+3: 0.657
+4: 0.654
+5: 0.662
+6: 0.047
+7: 0.048
+8: 0.048
+9: 
+Read 8 items
+> cbind(a[1:5], b[1:5])
+      [,1]  [,2]
+[1,] 0.648 0.501 T0W1
+[2,] 0.660 0.401 T1W1
+[3,] 0.657 0.441 T2W1
+[4,] 0.654 0.468 T0W2
+[5,] 0.662 0.660 T12W2

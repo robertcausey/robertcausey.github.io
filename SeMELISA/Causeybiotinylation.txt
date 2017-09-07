@@ -1,0 +1,18 @@
+Causey's biotinylation protocol for Taryn:
+
+1. Dissolve vial of biotin (10mg) in 250ul of DMSO. This gives a final concentration of 40 mg/mL
+
+2. Make 50 ul aliquots of biotin at 40 mg/mL (i.e. 5 aliquots at 50 ul).
+
+3. Take 12 (50 ul) vials of MAB211p (tracer antibody) (12 X 75ug = 900ug) and 12 X 50ul = 600 ul total volume (note 13.3 vials = 1 mg of antibody, but I am too superstitious to use 13 vials). 
+
+4. To this add 5 ul of biotin (5 ul X 40 mg/mL = 0.2 mg) 
+
+5. Mix and incubate at room temperature for an hour
+
+6. Dialyse this volume (600 uL) against 0.15M PBS using a 2 mL Slide-A-Lyzer MINI Dialysis Devices, with  20 kD Molecular weight cut-off (20K MWCO).
+
+6. Reconstitute up to a volume of 900 uL (~1 mg/mL) and make 50 ul aliquots (each at ~1 mg/mL i.e. 50 ug) and freeze aliquots at -20 C.
+
+7. When ready to conduct ELISA, add 1 aliquot of biotinylated antibody (50 ug) to 10 mL of blocking buffer (1 % NFDM )to have a final concentration of 0.5ug/mL of detector antibody in blocking buffer.
+ 
