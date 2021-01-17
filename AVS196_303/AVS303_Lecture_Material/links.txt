@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-	<head></head>
-	<body>
-
-	
 <A HREF=https://robertcausey.github.io/AVS196_303/AVS303_Lecture_Material/010_SyllabusAVS303spring2019.pdf>Syllabus</A><p>
 <A HREF=https://robertcausey.github.io/AVS196_303/AVS303_Lecture_Material/034_Basic_Colors_Markings.pdf>Coat Color and Markings</A><p>
 <A HREF=https://robertcausey.github.io/AVS196_303/AVS303_Lecture_Material/034_Horse_ID.pdf>Horse Identification</A><p>
@@ -51,11 +45,3 @@
 <A HREF=https://robertcausey.github.io/AVS196_303/AVS303_Lecture_Material/100_infectious_diseases.pdf>Review Questions on Infectious Diseases</A><p>
 <A HREF=https://robertcausey.github.io/AVS196_303/AVS303_Lecture_Material/101_vaccinationguidelines.pdf>Vaccination Guide Lines</A><p>
 <A HREF=https://robertcausey.github.io/AVS196_303/AVS303_Lecture_Material/200_skillsassessment.xlsx.pdf>Checklist of Skills you should accomplish.</A><p>
-	
-	
-	
-	
-	
-	
-	</body>
-</html>
