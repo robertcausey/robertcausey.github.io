@@ -1,0 +1,9 @@
+1009599	Banks,Grace	207/240-7431	grace.banks@maine.edu	AVS397-EMP	
+1141763	Bijjani,Gabriella	978/701-5841	gabriella.bijjani@maine.edu	AVS397-EMP	
+1048159	Dau,Alyssa M	207/381-6148	alyssa.dau@maine.edu	AVS397-EMP
+1051854	Dube,Bryanna M	207/735-6337	bryanna.dube@maine.edu	AVS397-EMP
+1012520	Horvath,Cleo,Anastasia	201/686-6517	cleo.horvath@maine.edu	AVS397-EMP
+0957889	Overturf,Tuuli V	802/551-1371	tuuli.overturf@maine.edu	AVS397-EMP
+1022401	Parke,Jayci N	207/852-6997	jayci.parke@maine.edu	AVS397-EMP	
+0992890	Piatt,Max Elizabeth	207/679-7341	maxine.piatt@maine.edu	AVS397-EMP
+1081186	Wood,Cassondra M	207/616-8175	cassondra.wood@maine.edu	AVS397-EMP
