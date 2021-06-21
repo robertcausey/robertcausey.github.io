@@ -28,7 +28,7 @@ CREATE TABLE `avs196` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,7 +54,7 @@ CREATE TABLE `avs303` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `avs397` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,7 +108,7 @@ CREATE TABLE `donors` (
   PRIMARY KEY (`donor_id`),
   UNIQUE KEY `first_name` (`first_name`),
   UNIQUE KEY `last_name` (`last_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,13 +131,13 @@ CREATE TABLE `events` (
   `event_id` mediumint unsigned NOT NULL AUTO_INCREMENT,
   `horse_id` mediumint unsigned NOT NULL,
   `date_reported` datetime NOT NULL,
+  `reporter` mediumint unsigned DEFAULT NULL,
   `event` enum('narrative','physical_exam','lameness_exam','dental','de-worming','vaccinations','farrier','labtest') NOT NULL DEFAULT 'narrative',
-  `reporter_id` mediumint unsigned NOT NULL,
+  `narrative` text,
   PRIMARY KEY (`event_id`),
   KEY `horse_id` (`horse_id`),
-  KEY `date_reported` (`date_reported`),
-  KEY `reporter_id` (`reporter_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `date_reported` (`date_reported`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `horses` (
   UNIQUE KEY `barn_name` (`barn_name`),
   UNIQUE KEY `reg_name` (`reg_name`),
   KEY `donor_id` (`donor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -225,7 +225,7 @@ CREATE TABLE `physicalexams` (
   KEY `horse_id` (`horse_id`),
   KEY `date_reported` (`date_reported`),
   KEY `reporter_id` (`reporter_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -252,7 +252,7 @@ CREATE TABLE `reporters` (
   PRIMARY KEY (`reporter_id`),
   UNIQUE KEY `first_name` (`first_name`),
   UNIQUE KEY `last_name` (`last_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -277,7 +277,7 @@ CREATE TABLE `staff` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -303,7 +303,7 @@ CREATE TABLE `summer2021` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -325,4 +325,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-14 22:20:25
+-- Dump completed on 2021-06-20 22:00:21
