@@ -1,0 +1,1139 @@
+[robert@localhost ~]$ ls
+Desktop    Downloads  mysql_robert  Pictures  robertcausey.github.io  Templates
+Documents  Music      mysql-server  Public    talking.txt             Videos
+[robert@localhost ~]$ cd mysql_robert/
+[robert@localhost mysql_robert]$ ls
+20210614_console.txt  horsebarn2.sql                      pet.txt
+avs196.txt            impteat.txt                         staff.txt
+avs303.txt            insert_data_from_another_table.txt  summer2021.txt
+avs397.txt            mysqldump.txt                       test_db.sql
+event.txt             mysqlimport.txt
+[robert@localhost mysql_robert]$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.25 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| horsebarn2         |
+| information_schema |
+| menagerie          |
+| mysql              |
+| performance_schema |
+| sys                |
+| teat               |
+| test_db            |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> USE horsebarn2;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_horsebarn2 |
++----------------------+
+| avs196               |
+| avs303               |
+| avs397               |
+| donors               |
+| events               |
+| horses               |
+| physicalexams        |
+| reporters            |
+| staff                |
+| summer2021           |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM staff;
++------------+------------------+--------------+--------------------------+---------------------+
+| student_id | name             | phone        | email                    | class               |
++------------+------------------+--------------+--------------------------+---------------------+
+| -------    | Causey, Robert C | 207/922-7475 | rcausey@maine.edu        | Faculty Coordinator |
+| -------    | Astle, Cassie    | 207/610-9483 | wittertraining@gmail.com | Equine Trainer      |
++------------+------------------+--------------+--------------------------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM summer2021;
++------------+-------------------------+--------------+---------------------------------+---------------------+
+| student_id | name                    | phone        | email                           | class               |
++------------+-------------------------+--------------+---------------------------------+---------------------+
+| -------    | Causey, Robert C        | 207/922-7475 | rcausey@maine.edu               | Faculty Coordinator |
+| -------    | Astle, Cassie           | 207/610-9483 | wittertraining@gmail.com        | Equine Trainer      |
+| 1009599    | Banks,Grace             | 207/240-7431 | grace.banks@maine.edu           | AVS397-EMP          |
+| 1141763    | Bijjani,Gabriella       | 978/701-5841 | gabriella.bijjani@maine.edu     | AVS397-EMP          |
+| 1048159    | Dau,Alyssa M            | 207/381-6148 | alyssa.dau@maine.edu            | AVS397-EMP          |
+| 1051854    | Dube,Bryanna M          | 207/735-6337 | bryanna.dube@maine.edu          | AVS397-EMP          |
+| 1012520    | Horvath,Cleo,Anastasia  | 201/686-6517 | cleo.horvath@maine.edu          | AVS397-EMP          |
+| 0957889    | Overturf,Tuuli V        | 802/551-1371 | tuuli.overturf@maine.edu        | AVS397-EMP          |
+| 1022401    | Parke,Jayci N           | 207/852-6997 | jayci.parke@maine.edu           | AVS397-EMP          |
+| 0992890    | Piatt,Max Elizabeth     | 207/679-7341 | maxine.piatt@maine.edu          | AVS397-EMP          |
+| 1081186    | Wood,Cassondra M        | 207/616-8175 | cassondra.wood@maine.edu        | AVS397-EMP          |
+| 1141763    | Bijjani,Gabriella       | 978/701-5841 | gabriella.bijjani@maine.edu     | AVS303              |
+| 1022893    | Durkee,Olivia C         | 207/692-3352 | olivia.durkee@maine.edu         | AVS303              |
+| 0050479    | McGregor,Mary M         | 815/245-5993 | mary.m.mcgregor@maine.edu       | AVS303              |
+| 1049058    | Owen,Sydney B           | 352/613-9015 | sydney.b.owen@maine.edu         | AVS303              |
+| 1079458    | Schnaitmann,Elizabeth M | 203/445-3311 | elizabeth.schnaitmann@maine.edu | AVS303              |
+| 1115131    | Starks,Lauren           | 207/852-6270 | lauren.starks@maine.edu         | AVS303              |
+| 1043887    | Martin,Abi J            | 207/930-5436 | abigail.j.martin@maine.edu      | AVS196              |
+| 0050479    | McGregor,Mary M         | 815/245-5993 | mary.m.mcgregor@maine.edu       | AVS196              |
++------------+-------------------------+--------------+---------------------------------+---------------------+
+19 rows in set (0.00 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_horsebarn2 |
++----------------------+
+| avs196               |
+| avs303               |
+| avs397               |
+| donors               |
+| events               |
+| horses               |
+| physicalexams        |
+| reporters            |
+| staff                |
+| summer2021           |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM events;
+Empty set (0.00 sec)
+
+mysql> SELECT * FROM horses;
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+| horse_id | barn_name | reg_name           | sex      | color    | face_markings       | body_markings    | leg_markings                                                | tattoo | donor_id | date_received | date_of_birth |
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+|        1 | Bliss     | Blisstex           | mare     | brown    | big beautiful star  | none             | none                                                        | T1911  |        1 | 1927-06-25    | 1927-06-25    |
+|        2 | Francis   | Upwind Benchmark   | gelding  | buckskin | star                | none             | none                                                        | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        3 | Dixie     | Dixie Road Jazz    | mare     | bay      | crescent moon       | none             | none                                                        | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        4 | Sara      | Saranaud           | mare     | bay      | none                | none             | white pastern right front                                   | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        5 | Laney     | Strainght n Narrow | mare     | bay      | star                | dapples          | white pastern right rear                                    | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        6 | Blue      | Lahars Baby Blue   | mare     | bay      | none                | none             | white pasterns right and left rear                          | XXX    |        3 | 1927-06-25    | 1927-06-25    |
+|        7 | Diva      | Pembroke Diva      | mare     | bay      | none                | none             | white pastern right rear                                    | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|        8 | Suzie     | Pembroke Suzie     | mare     | bay      | none                | none             | three white pasterns: left front, lect rear, and right rear | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|        9 | Whitey    | Pembroke Whiteout  | mare     | grey     | none                | flea-bitten grey | pinfiring over medial splint bones                          | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|       10 | Gina      | Foxridge Gina      | mare     | black    | star                | none             | pinfiring over rear of hocks                                | XXX    |        5 | 1927-06-25    | 1927-06-25    |
+|       11 | Roadshow  | Roadshow Hall      | stallion | bay      | star strip and snip |                  | pinfiring                                                   | XXX    |        2 | 1927-06-25    | 1927-06-25    |
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+11 rows in set (0.00 sec)
+
+mysql> DESCRIBE horses;
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| Field         | Type                                                                                                                                                          | Null | Key | Default | Extra          |
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| horse_id      | mediumint unsigned                                                                                                                                            | NO   | PRI | NULL    | auto_increment |
+| barn_name     | varchar(20)                                                                                                                                                   | NO   | UNI | NULL    |                |
+| reg_name      | varchar(20)                                                                                                                                                   | NO   | UNI | NULL    |                |
+| sex           | enum('mare','gelding','colt','filly','stallion','cryptorchid','intersex')                                                                                     | YES  |     | NULL    |                |
+| color         | enum('bay','brown','black','grey','buckskin','chesnut','roan','palomino','cremello','appaloosa','pinto','skewbald','piebald','tobiano','overo','dun','white') | YES  |     | NULL    |                |
+| face_markings | text                                                                                                                                                          | YES  |     | NULL    |                |
+| body_markings | text                                                                                                                                                          | YES  |     | NULL    |                |
+| leg_markings  | text                                                                                                                                                          | YES  |     | NULL    |                |
+| tattoo        | text                                                                                                                                                          | YES  |     | NULL    |                |
+| donor_id      | mediumint unsigned                                                                                                                                            | NO   | MUL | NULL    |                |
+| date_received | date                                                                                                                                                          | NO   |     | NULL    |                |
+| date_of_birth | date                                                                                                                                                          | NO   |     | NULL    |                |
++---------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+12 rows in set (0.00 sec)
+
+mysql> SELECT barn_name, date_received, date_of_birth FROM horses;
++-----------+---------------+---------------+
+| barn_name | date_received | date_of_birth |
++-----------+---------------+---------------+
+| Bliss     | 1927-06-25    | 1927-06-25    |
+| Francis   | 1927-06-25    | 1927-06-25    |
+| Dixie     | 1927-06-25    | 1927-06-25    |
+| Sara      | 1927-06-25    | 1927-06-25    |
+| Laney     | 1927-06-25    | 1927-06-25    |
+| Blue      | 1927-06-25    | 1927-06-25    |
+| Diva      | 1927-06-25    | 1927-06-25    |
+| Suzie     | 1927-06-25    | 1927-06-25    |
+| Whitey    | 1927-06-25    | 1927-06-25    |
+| Gina      | 1927-06-25    | 1927-06-25    |
+| Roadshow  | 1927-06-25    | 1927-06-25    |
++-----------+---------------+---------------+
+11 rows in set (0.00 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_horsebarn2 |
++----------------------+
+| avs196               |
+| avs303               |
+| avs397               |
+| donors               |
+| events               |
+| horses               |
+| physicalexams        |
+| reporters            |
+| staff                |
+| summer2021           |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM physicalexams;
+Empty set (0.00 sec)
+
+mysql> DESCRIBE EVENTS;
+ERROR 1146 (42S02): Table 'horsebarn2.EVENTS' doesn't exist
+mysql> DESCRIBE events;
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| Field         | Type                                                                                                       | Null | Key | Default   | Extra          |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| event_id      | mediumint unsigned                                                                                         | NO   | PRI | NULL      | auto_increment |
+| horse_id      | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
+| date_reported | datetime                                                                                                   | NO   | MUL | NULL      |                |
+| event         | enum('narrative','physical_exam','lameness_exam','dental','de-worming','vaccinations','farrier','labtest') | NO   |     | narrative |                |
+| reporter_id   | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_horsebarn2 |
++----------------------+
+| avs196               |
+| avs303               |
+| avs397               |
+| donors               |
+| events               |
+| horses               |
+| physicalexams        |
+| reporters            |
+| staff                |
+| summer2021           |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> ALTER TABLE events ADD narrative TEXT;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE events;
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| Field         | Type                                                                                                       | Null | Key | Default   | Extra          |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| event_id      | mediumint unsigned                                                                                         | NO   | PRI | NULL      | auto_increment |
+| horse_id      | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
+| date_reported | datetime                                                                                                   | NO   | MUL | NULL      |                |
+| event         | enum('narrative','physical_exam','lameness_exam','dental','de-worming','vaccinations','farrier','labtest') | NO   |     | narrative |                |
+| reporter_id   | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
+| narrative     | text                                                                                                       | YES  |     | NULL      |                |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> ALTER TABLE events DROP COLUMN reporter_id;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE events;
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| Field         | Type                                                                                                       | Null | Key | Default   | Extra          |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| event_id      | mediumint unsigned                                                                                         | NO   | PRI | NULL      | auto_increment |
+| horse_id      | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
+| date_reported | datetime                                                                                                   | NO   | MUL | NULL      |                |
+| event         | enum('narrative','physical_exam','lameness_exam','dental','de-worming','vaccinations','farrier','labtest') | NO   |     | narrative |                |
+| narrative     | text                                                                                                       | YES  |     | NULL      |                |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE events ADD reporter MEDIUMINT UNSIGNED AFTER date_reported;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESCRIBE events;
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| Field         | Type                                                                                                       | Null | Key | Default   | Extra          |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| event_id      | mediumint unsigned                                                                                         | NO   | PRI | NULL      | auto_increment |
+| horse_id      | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
+| date_reported | datetime                                                                                                   | NO   | MUL | NULL      |                |
+| reporter      | mediumint unsigned                                                                                         | YES  |     | NULL      |                |
+| event         | enum('narrative','physical_exam','lameness_exam','dental','de-worming','vaccinations','farrier','labtest') | NO   |     | narrative |                |
+| narrative     | text                                                                                                       | YES  |     | NULL      |                |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> 237+175;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '237+175' at line 1
+mysql> SELECT * FROM horses;
+ERROR 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+No connection. Trying to reconnect...
+Connection id:    13
+Current database: horsebarn2
+
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+| horse_id | barn_name | reg_name           | sex      | color    | face_markings       | body_markings    | leg_markings                                                | tattoo | donor_id | date_received | date_of_birth |
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+|        1 | Bliss     | Blisstex           | mare     | brown    | big beautiful star  | none             | none                                                        | T1911  |        1 | 1927-06-25    | 1927-06-25    |
+|        2 | Francis   | Upwind Benchmark   | gelding  | buckskin | star                | none             | none                                                        | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        3 | Dixie     | Dixie Road Jazz    | mare     | bay      | crescent moon       | none             | none                                                        | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        4 | Sara      | Saranaud           | mare     | bay      | none                | none             | white pastern right front                                   | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        5 | Laney     | Strainght n Narrow | mare     | bay      | star                | dapples          | white pastern right rear                                    | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        6 | Blue      | Lahars Baby Blue   | mare     | bay      | none                | none             | white pasterns right and left rear                          | XXX    |        3 | 1927-06-25    | 1927-06-25    |
+|        7 | Diva      | Pembroke Diva      | mare     | bay      | none                | none             | white pastern right rear                                    | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|        8 | Suzie     | Pembroke Suzie     | mare     | bay      | none                | none             | three white pasterns: left front, lect rear, and right rear | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|        9 | Whitey    | Pembroke Whiteout  | mare     | grey     | none                | flea-bitten grey | pinfiring over medial splint bones                          | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|       10 | Gina      | Foxridge Gina      | mare     | black    | star                | none             | pinfiring over rear of hocks                                | XXX    |        5 | 1927-06-25    | 1927-06-25    |
+|       11 | Roadshow  | Roadshow Hall      | stallion | bay      | star strip and snip |                  | pinfiring                                                   | XXX    |        2 | 1927-06-25    | 1927-06-25    |
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+11 rows in set (0.00 sec)
+
+mysql> DESCRIBE events;
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| Field         | Type                                                                                                       | Null | Key | Default   | Extra          |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| event_id      | mediumint unsigned                                                                                         | NO   | PRI | NULL      | auto_increment |
+| horse_id      | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
+| date_reported | datetime                                                                                                   | NO   | MUL | NULL      |                |
+| reporter      | mediumint unsigned                                                                                         | YES  |     | NULL      |                |
+| event         | enum('narrative','physical_exam','lameness_exam','dental','de-worming','vaccinations','farrier','labtest') | NO   |     | narrative |                |
+| narrative     | text                                                                                                       | YES  |     | NULL      |                |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> SET GLOBAL local_infile=1;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> SELECT * FROM events;
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| event_id | horse_id | date_reported       | reporter | event        | narrative                                                                                                                                                                                                                                                                                                                                                                                                                                |
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        1 |        1 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|        2 |        1 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|        3 |        2 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses                                                                                                                                                                                                                                                                                                                                    |
+|        4 |        2 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth.  |
+|        5 |        2 | 2021-06-03 00:00:00 |        0 | dental       | Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.                                                                                          |
+|        6 |        3 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed no significant white line disease - receiving supplemental alfalfa                                                                                                                                                                                                                                                                                                                                                |
+|        7 |        3 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|        8 |        3 | 2021-06-03 00:00:00 |        0 | dental       | Performed by Dr Katrina Glaude. Noticeable hooks, ridges and some ulcerations.                                                                                                                                                                                                                                                                                                                                                           |
+|        9 |        4 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       10 |        4 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       11 |        5 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       12 |        5 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       13 |        6 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       14 |        6 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       15 |        7 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       16 |        7 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       17 |        8 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       18 |        8 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       19 |        9 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       20 |        9 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       21 |       10 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       22 |       10 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       23 |       11 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       24 |       11 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       25 |        0 | 0000-00-00 00:00:00 |     NULL |              | NULL                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|       26 |        0 | 0000-00-00 00:00:00 |     NULL |              | NULL                                                                                                                                                                                                                                                                                                                                                                                                                                     |
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+26 rows in set (0.00 sec)
+
+mysql> SELECT * FROM events\g
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| event_id | horse_id | date_reported       | reporter | event        | narrative                                                                                                                                                                                                                                                                                                                                                                                                                                |
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        1 |        1 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|        2 |        1 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|        3 |        2 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses                                                                                                                                                                                                                                                                                                                                    |
+|        4 |        2 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth.  |
+|        5 |        2 | 2021-06-03 00:00:00 |        0 | dental       | Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.                                                                                          |
+|        6 |        3 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed no significant white line disease - receiving supplemental alfalfa                                                                                                                                                                                                                                                                                                                                                |
+|        7 |        3 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|        8 |        3 | 2021-06-03 00:00:00 |        0 | dental       | Performed by Dr Katrina Glaude. Noticeable hooks, ridges and some ulcerations.                                                                                                                                                                                                                                                                                                                                                           |
+|        9 |        4 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       10 |        4 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       11 |        5 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       12 |        5 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       13 |        6 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       14 |        6 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       15 |        7 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       16 |        7 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       17 |        8 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       18 |        8 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       19 |        9 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       20 |        9 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       21 |       10 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       22 |       10 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       23 |       11 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       24 |       11 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       25 |        0 | 0000-00-00 00:00:00 |     NULL |              | NULL                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|       26 |        0 | 0000-00-00 00:00:00 |     NULL |              | NULL                                                                                                                                                                                                                                                                                                                                                                                                                                     |
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+26 rows in set (0.00 sec)
+
+mysql> SELECT * FROM events\G
+*************************** 1. row ***************************
+     event_id: 1
+     horse_id: 1
+date_reported: 2021-05-18 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 2. row ***************************
+     event_id: 2
+     horse_id: 1
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 3. row ***************************
+     event_id: 3
+     horse_id: 2
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses
+*************************** 4. row ***************************
+     event_id: 4
+     horse_id: 2
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. 
+*************************** 5. row ***************************
+     event_id: 5
+     horse_id: 2
+date_reported: 2021-06-03 00:00:00
+     reporter: 0
+        event: dental
+    narrative: Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.
+*************************** 6. row ***************************
+     event_id: 6
+     horse_id: 3
+date_reported: 2021-05-18 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed no significant white line disease - receiving supplemental alfalfa
+*************************** 7. row ***************************
+     event_id: 7
+     horse_id: 3
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 8. row ***************************
+     event_id: 8
+     horse_id: 3
+date_reported: 2021-06-03 00:00:00
+     reporter: 0
+        event: dental
+    narrative: Performed by Dr Katrina Glaude. Noticeable hooks, ridges and some ulcerations.  
+*************************** 9. row ***************************
+     event_id: 9
+     horse_id: 4
+date_reported: 2021-05-18 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 10. row ***************************
+     event_id: 10
+     horse_id: 4
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 11. row ***************************
+     event_id: 11
+     horse_id: 5
+date_reported: 2021-05-18 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 12. row ***************************
+     event_id: 12
+     horse_id: 5
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 13. row ***************************
+     event_id: 13
+     horse_id: 6
+date_reported: 2021-05-18 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 14. row ***************************
+     event_id: 14
+     horse_id: 6
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 15. row ***************************
+     event_id: 15
+     horse_id: 7
+date_reported: 2021-05-18 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 16. row ***************************
+     event_id: 16
+     horse_id: 7
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 17. row ***************************
+     event_id: 17
+     horse_id: 8
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 18. row ***************************
+     event_id: 18
+     horse_id: 8
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 19. row ***************************
+     event_id: 19
+     horse_id: 9
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 20. row ***************************
+     event_id: 20
+     horse_id: 9
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 21. row ***************************
+     event_id: 21
+     horse_id: 10
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 22. row ***************************
+     event_id: 22
+     horse_id: 10
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 23. row ***************************
+     event_id: 23
+     horse_id: 11
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 24. row ***************************
+     event_id: 24
+     horse_id: 11
+date_reported: 2021-05-25 00:00:00
+     reporter: 0
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 25. row ***************************
+     event_id: 25
+     horse_id: 0
+date_reported: 0000-00-00 00:00:00
+     reporter: NULL
+        event: 
+    narrative: NULL
+*************************** 26. row ***************************
+     event_id: 26
+     horse_id: 0
+date_reported: 0000-00-00 00:00:00
+     reporter: NULL
+        event: 
+    narrative: NULL
+26 rows in set (0.00 sec)
+
+mysql> SELECT pet.name,
+    ->        TIMESTAMPDIFF(YEAR,birth,date) AS age,
+    ->        remark
+    ->        FROM pet INNER JOIN event
+    ->          ON horse.name = event.name;
+ERROR 1146 (42S02): Table 'horsebarn2.pet' doesn't exist
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_horsebarn2 |
++----------------------+
+| avs196               |
+| avs303               |
+| avs397               |
+| donors               |
+| events               |
+| horses               |
+| physicalexams        |
+| reporters            |
+| staff                |
+| summer2021           |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM horses \G
+*************************** 1. row ***************************
+     horse_id: 1
+    barn_name: Bliss
+     reg_name: Blisstex
+          sex: mare
+        color: brown
+face_markings: big beautiful star
+body_markings: none
+ leg_markings: none
+       tattoo: T1911
+     donor_id: 1
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 2. row ***************************
+     horse_id: 2
+    barn_name: Francis
+     reg_name: Upwind Benchmark
+          sex: gelding
+        color: buckskin
+face_markings: star
+body_markings: none
+ leg_markings: none
+       tattoo: XXX
+     donor_id: 2
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 3. row ***************************
+     horse_id: 3
+    barn_name: Dixie
+     reg_name: Dixie Road Jazz
+          sex: mare
+        color: bay
+face_markings: crescent moon
+body_markings: none
+ leg_markings: none
+       tattoo: XXX
+     donor_id: 2
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 4. row ***************************
+     horse_id: 4
+    barn_name: Sara
+     reg_name: Saranaud
+          sex: mare
+        color: bay
+face_markings: none
+body_markings: none
+ leg_markings: white pastern right front
+       tattoo: XXX
+     donor_id: 2
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 5. row ***************************
+     horse_id: 5
+    barn_name: Laney
+     reg_name: Strainght n Narrow
+          sex: mare
+        color: bay
+face_markings: star
+body_markings: dapples
+ leg_markings: white pastern right rear
+       tattoo: XXX
+     donor_id: 2
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 6. row ***************************
+     horse_id: 6
+    barn_name: Blue
+     reg_name: Lahars Baby Blue
+          sex: mare
+        color: bay
+face_markings: none
+body_markings: none
+ leg_markings: white pasterns right and left rear
+       tattoo: XXX
+     donor_id: 3
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 7. row ***************************
+     horse_id: 7
+    barn_name: Diva
+     reg_name: Pembroke Diva
+          sex: mare
+        color: bay
+face_markings: none
+body_markings: none
+ leg_markings: white pastern right rear
+       tattoo: XXX
+     donor_id: 4
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 8. row ***************************
+     horse_id: 8
+    barn_name: Suzie
+     reg_name: Pembroke Suzie
+          sex: mare
+        color: bay
+face_markings: none
+body_markings: none
+ leg_markings: three white pasterns: left front, lect rear, and right rear
+       tattoo: XXX
+     donor_id: 4
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 9. row ***************************
+     horse_id: 9
+    barn_name: Whitey
+     reg_name: Pembroke Whiteout
+          sex: mare
+        color: grey
+face_markings: none
+body_markings: flea-bitten grey
+ leg_markings: pinfiring over medial splint bones
+       tattoo: XXX
+     donor_id: 4
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 10. row ***************************
+     horse_id: 10
+    barn_name: Gina
+     reg_name: Foxridge Gina
+          sex: mare
+        color: black
+face_markings: star
+body_markings: none
+ leg_markings: pinfiring over rear of hocks
+       tattoo: XXX
+     donor_id: 5
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+*************************** 11. row ***************************
+     horse_id: 11
+    barn_name: Roadshow
+     reg_name: Roadshow Hall
+          sex: stallion
+        color: bay
+face_markings: star strip and snip
+body_markings: 
+ leg_markings: pinfiring
+       tattoo: XXX
+     donor_id: 2
+date_received: 1927-06-25
+date_of_birth: 1927-06-25
+11 rows in set (0.00 sec)
+
+mysql> SELECT horses.barn_name, events.event, events.narrative FROM horses INNERJOIN events ON horses.horse_id=events.horse_id\G
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'events ON horses.horse_id=events.horse_id' at line 1
+mysql> SELECT horses.barn_name, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id\G
+*************************** 1. row ***************************
+barn_name: Bliss
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 2. row ***************************
+barn_name: Bliss
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 3. row ***************************
+barn_name: Blue
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 4. row ***************************
+barn_name: Blue
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 5. row ***************************
+barn_name: Diva
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 6. row ***************************
+barn_name: Diva
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 7. row ***************************
+barn_name: Dixie
+    event: farrier
+narrative: Jerry Harriman noticed no significant white line disease - receiving supplemental alfalfa
+*************************** 8. row ***************************
+barn_name: Dixie
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 9. row ***************************
+barn_name: Dixie
+    event: dental
+narrative: Performed by Dr Katrina Glaude. Noticeable hooks, ridges and some ulcerations.  
+*************************** 10. row ***************************
+barn_name: Francis
+    event: farrier
+narrative: Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses
+*************************** 11. row ***************************
+barn_name: Francis
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. 
+*************************** 12. row ***************************
+barn_name: Francis
+    event: dental
+narrative: Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.
+*************************** 13. row ***************************
+barn_name: Gina
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 14. row ***************************
+barn_name: Gina
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 15. row ***************************
+barn_name: Laney
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 16. row ***************************
+barn_name: Laney
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 17. row ***************************
+barn_name: Roadshow
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 18. row ***************************
+barn_name: Roadshow
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 19. row ***************************
+barn_name: Sara
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 20. row ***************************
+barn_name: Sara
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 21. row ***************************
+barn_name: Suzie
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 22. row ***************************
+barn_name: Suzie
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 23. row ***************************
+barn_name: Whitey
+    event: farrier
+narrative: Jerry Harriman noticed white line disease
+*************************** 24. row ***************************
+barn_name: Whitey
+    event: vaccinations
+narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+24 rows in set (0.00 sec)
+
+mysql> SELECT horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.h
+orse_id\G
+*************************** 1. row ***************************
+    barn_name: Bliss
+date_reported: 2021-05-18 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 2. row ***************************
+    barn_name: Bliss
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 3. row ***************************
+    barn_name: Blue
+date_reported: 2021-05-18 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 4. row ***************************
+    barn_name: Blue
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 5. row ***************************
+    barn_name: Diva
+date_reported: 2021-05-18 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 6. row ***************************
+    barn_name: Diva
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 7. row ***************************
+    barn_name: Dixie
+date_reported: 2021-05-18 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed no significant white line disease - receiving supplemental alfalfa
+*************************** 8. row ***************************
+    barn_name: Dixie
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 9. row ***************************
+    barn_name: Dixie
+date_reported: 2021-06-03 00:00:00
+        event: dental
+    narrative: Performed by Dr Katrina Glaude. Noticeable hooks, ridges and some ulcerations.  
+*************************** 10. row ***************************
+    barn_name: Francis
+date_reported: 2021-05-25 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses
+*************************** 11. row ***************************
+    barn_name: Francis
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. 
+*************************** 12. row ***************************
+    barn_name: Francis
+date_reported: 2021-06-03 00:00:00
+        event: dental
+    narrative: Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.
+*************************** 13. row ***************************
+    barn_name: Gina
+date_reported: 2021-05-25 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 14. row ***************************
+    barn_name: Gina
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 15. row ***************************
+    barn_name: Laney
+date_reported: 2021-05-18 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 16. row ***************************
+    barn_name: Laney
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 17. row ***************************
+    barn_name: Roadshow
+date_reported: 2021-05-25 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 18. row ***************************
+    barn_name: Roadshow
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 19. row ***************************
+    barn_name: Sara
+date_reported: 2021-05-18 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 20. row ***************************
+    barn_name: Sara
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 21. row ***************************
+    barn_name: Suzie
+date_reported: 2021-05-25 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 22. row ***************************
+    barn_name: Suzie
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 23. row ***************************
+    barn_name: Whitey
+date_reported: 2021-05-25 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+*************************** 24. row ***************************
+    barn_name: Whitey
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+24 rows in set (0.00 sec)
+
+mysql> SELECT horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id WHERE horses.barn_name = Francis\G
+ERROR 1054 (42S22): Unknown column 'Francis' in 'where clause'
+mysql> SELECT horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id WHERE horses.barn_name = 'Francis'\G
+*************************** 1. row ***************************
+    barn_name: Francis
+date_reported: 2021-05-25 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses
+*************************** 2. row ***************************
+    barn_name: Francis
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. 
+*************************** 3. row ***************************
+    barn_name: Francis
+date_reported: 2021-06-03 00:00:00
+        event: dental
+    narrative: Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.
+3 rows in set (0.00 sec)
+
+mysql> SELECT horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id WHERE events.event = 'vaccinations'\G
+*************************** 1. row ***************************
+    barn_name: Bliss
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 2. row ***************************
+    barn_name: Francis
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. 
+*************************** 3. row ***************************
+    barn_name: Dixie
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 4. row ***************************
+    barn_name: Sara
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 5. row ***************************
+    barn_name: Laney
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 6. row ***************************
+    barn_name: Blue
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 7. row ***************************
+    barn_name: Diva
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 8. row ***************************
+    barn_name: Suzie
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 9. row ***************************
+    barn_name: Whitey
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 10. row ***************************
+    barn_name: Gina
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 11. row ***************************
+    barn_name: Roadshow
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+11 rows in set (0.00 sec)
+
+mysql> SELECT horses.horse_id, horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id WHERE events.event = 'vaccinations'\G
+*************************** 1. row ***************************
+     horse_id: 1
+    barn_name: Bliss
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 2. row ***************************
+     horse_id: 2
+    barn_name: Francis
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. 
+*************************** 3. row ***************************
+     horse_id: 3
+    barn_name: Dixie
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 4. row ***************************
+     horse_id: 4
+    barn_name: Sara
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 5. row ***************************
+     horse_id: 5
+    barn_name: Laney
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 6. row ***************************
+     horse_id: 6
+    barn_name: Blue
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 7. row ***************************
+     horse_id: 7
+    barn_name: Diva
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 8. row ***************************
+     horse_id: 8
+    barn_name: Suzie
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 9. row ***************************
+     horse_id: 9
+    barn_name: Whitey
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 10. row ***************************
+     horse_id: 10
+    barn_name: Gina
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+*************************** 11. row ***************************
+     horse_id: 11
+    barn_name: Roadshow
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus 
+11 rows in set (0.00 sec)
+
+mysql> SELECT horses.horse_id, horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id WHERE events.event = 'vaccinations' AND horses.horse_id = 'Francis'\G
+Empty set, 1 warning (0.00 sec)
+
+mysql> SELECT horses.horse_id, horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id WHERE events.event = 'vaccinations' AND horses.horse_id = 2\G
+*************************** 1. row ***************************
+     horse_id: 2
+    barn_name: Francis
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. 
+1 row in set (0.00 sec)
+
+mysql> SELECT horses.horse_id, horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id WHERE events.event = 'vaccinations' AND horses.barn_name = 'Francis'\G
+*************************** 1. row ***************************
+     horse_id: 2
+    barn_name: Francis
+date_reported: 2021-05-25 00:00:00
+        event: vaccinations
+    narrative: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. 
+1 row in set (0.00 sec)
+
+mysql> SELECT horses.horse_id, horses.barn_name, events.date_reported, events.event, events.narrative FROM horses INNER JOIN events ON horses.horse_id=events.horse_id WHERE events.event = 'farrier' AND horses.barn_name = 'Blue'\G
+*************************** 1. row ***************************
+     horse_id: 6
+    barn_name: Blue
+date_reported: 2021-05-18 00:00:00
+        event: farrier
+    narrative: Jerry Harriman noticed white line disease
+1 row in set (0.00 sec)
+
+mysql> EXIT
+Bye
+[robert@localhost mysql_robert]$ 
+
