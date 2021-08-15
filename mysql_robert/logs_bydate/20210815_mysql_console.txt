@@ -1,0 +1,624 @@
+[robert@localhost ~]$ mysql -u root -p
+Enter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.25 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| horsebarn2         |
+| information_schema |
+| menagerie          |
+| mysql              |
+| performance_schema |
+| sys                |
+| teat               |
+| test_db            |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> USE horsebarn2;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> SHOW TABLES:
+    -> :
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ':
+:' at line 1
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_horsebarn2 |
++----------------------+
+| avs196               |
+| avs303               |
+| avs397               |
+| donors               |
+| events               |
+| horses               |
+| physicalexams        |
+| reporters            |
+| staff                |
+| summer2021           |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> DESCRIBE physicalexams;
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| Field         | Type                                                                                            | Null | Key | Default | Extra          |
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| pe_id         | mediumint unsigned                                                                              | NO   | PRI | NULL    | auto_increment |
+| event_id      | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| horse_id      | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| date_reported | datetime                                                                                        | NO   | MUL | NULL    |                |
+| reporter_id   | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| narrative     | text                                                                                            | YES  |     | NULL    |                |
+| bcs_1_5       | float(2,1)                                                                                      | YES  |     | NULL    |                |
+| crt           | enum('<1','<1.5','>1.5')                                                                        | YES  |     | NULL    |                |
+| mmfeel        | enum('moist','dry','tacky','slimy')                                                             | YES  |     | NULL    |                |
+| mmcolor       | enum('pink','pale','red','injected','hemorrhage','tattoo','pigmented','grey','purple','yellow') | YES  |     | NULL    |                |
+| mm_other      | text                                                                                            | YES  |     | NULL    |                |
+| dh_test       | enum('+','-')                                                                                   | YES  |     | NULL    |                |
+| temp          | float                                                                                           | YES  |     | NULL    |                |
+| pulse         | tinyint unsigned                                                                                | YES  |     | NULL    |                |
+| resp          | tinyint unsigned                                                                                | YES  |     | NULL    |                |
+| resp_other    | text                                                                                            | YES  |     | NULL    |                |
+| dplf          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dprf          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dplh          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dprh          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dp_other      | text                                                                                            | YES  |     | NULL    |                |
+| gstl          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gsbl          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gstr          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gsbr          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gs_other      | text                                                                                            | YES  |     | NULL    |                |
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+26 rows in set (0.00 sec)
+
+mysql> select +
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> SELECT * FROM physicalexams;
+Empty set (0.00 sec)
+
+mysql> DESCRIBE physicalexams/g
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '/g' at line 1
+mysql> DESCRIBE physicalexams\g
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| Field         | Type                                                                                            | Null | Key | Default | Extra          |
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| pe_id         | mediumint unsigned                                                                              | NO   | PRI | NULL    | auto_increment |
+| event_id      | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| horse_id      | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| date_reported | datetime                                                                                        | NO   | MUL | NULL    |                |
+| reporter_id   | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| narrative     | text                                                                                            | YES  |     | NULL    |                |
+| bcs_1_5       | float(2,1)                                                                                      | YES  |     | NULL    |                |
+| crt           | enum('<1','<1.5','>1.5')                                                                        | YES  |     | NULL    |                |
+| mmfeel        | enum('moist','dry','tacky','slimy')                                                             | YES  |     | NULL    |                |
+| mmcolor       | enum('pink','pale','red','injected','hemorrhage','tattoo','pigmented','grey','purple','yellow') | YES  |     | NULL    |                |
+| mm_other      | text                                                                                            | YES  |     | NULL    |                |
+| dh_test       | enum('+','-')                                                                                   | YES  |     | NULL    |                |
+| temp          | float                                                                                           | YES  |     | NULL    |                |
+| pulse         | tinyint unsigned                                                                                | YES  |     | NULL    |                |
+| resp          | tinyint unsigned                                                                                | YES  |     | NULL    |                |
+| resp_other    | text                                                                                            | YES  |     | NULL    |                |
+| dplf          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dprf          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dplh          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dprh          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dp_other      | text                                                                                            | YES  |     | NULL    |                |
+| gstl          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gsbl          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gstr          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gsbr          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gs_other      | text                                                                                            | YES  |     | NULL    |                |
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+26 rows in set (0.00 sec)
+
+mysql> DESCRIBE events\g
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| Field         | Type                                                                                                       | Null | Key | Default   | Extra          |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| event_id      | mediumint unsigned                                                                                         | NO   | PRI | NULL      | auto_increment |
+| horse_id      | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
+| date_reported | datetime                                                                                                   | NO   | MUL | NULL      |                |
+| reporter      | mediumint unsigned                                                                                         | YES  |     | NULL      |                |
+| event         | enum('narrative','physical_exam','lameness_exam','dental','de-worming','vaccinations','farrier','labtest') | NO   |     | narrative |                |
+| narrative     | text                                                                                                       | YES  |     | NULL      |                |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+6 rows in set (0.01 sec)
+
+mysql> SELECT * FROM events;
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| event_id | horse_id | date_reported       | reporter | event        | narrative                                                                                                                                                                                                                                                                                                                                                                                                                                |
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        1 |        1 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|        2 |        1 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|        3 |        2 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses                                                                                                                                                                                                                                                                                                                                    |
+|        4 |        2 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth.  |
+|        5 |        2 | 2021-06-03 00:00:00 |        0 | dental       | Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.                                                                                          |
+|        6 |        3 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed no significant white line disease - receiving supplemental alfalfa                                                                                                                                                                                                                                                                                                                                                |
+|        7 |        3 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|        8 |        3 | 2021-06-03 00:00:00 |        0 | dental       | Performed by Dr Katrina Glaude. Noticeable hooks, ridges and some ulcerations.                                                                                                                                                                                                                                                                                                                                                           |
+|        9 |        4 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       10 |        4 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       11 |        5 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       12 |        5 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       13 |        6 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       14 |        6 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       15 |        7 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       16 |        7 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       17 |        8 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       18 |        8 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       19 |        9 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       20 |        9 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       21 |       10 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       22 |       10 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       23 |       11 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       24 |       11 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       25 |        0 | 0000-00-00 00:00:00 |     NULL |              | NULL                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|       26 |        0 | 0000-00-00 00:00:00 |     NULL |              | NULL                                                                                                                                                                                                                                                                                                                                                                                                                                     |
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+26 rows in set (0.00 sec)
+
+mysql> SHOW TABLES;
++----------------------+
+| Tables_in_horsebarn2 |
++----------------------+
+| avs196               |
+| avs303               |
+| avs397               |
+| donors               |
+| events               |
+| horses               |
+| physicalexams        |
+| reporters            |
+| staff                |
+| summer2021           |
++----------------------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT * FROM horses;
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+| horse_id | barn_name | reg_name           | sex      | color    | face_markings       | body_markings    | leg_markings                                                | tattoo | donor_id | date_received | date_of_birth |
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+|        1 | Bliss     | Blisstex           | mare     | brown    | big beautiful star  | none             | none                                                        | T1911  |        1 | 1927-06-25    | 1927-06-25    |
+|        2 | Francis   | Upwind Benchmark   | gelding  | buckskin | star                | none             | none                                                        | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        3 | Dixie     | Dixie Road Jazz    | mare     | bay      | crescent moon       | none             | none                                                        | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        4 | Sara      | Saranaud           | mare     | bay      | none                | none             | white pastern right front                                   | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        5 | Laney     | Strainght n Narrow | mare     | bay      | star                | dapples          | white pastern right rear                                    | XXX    |        2 | 1927-06-25    | 1927-06-25    |
+|        6 | Blue      | Lahars Baby Blue   | mare     | bay      | none                | none             | white pasterns right and left rear                          | XXX    |        3 | 1927-06-25    | 1927-06-25    |
+|        7 | Diva      | Pembroke Diva      | mare     | bay      | none                | none             | white pastern right rear                                    | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|        8 | Suzie     | Pembroke Suzie     | mare     | bay      | none                | none             | three white pasterns: left front, lect rear, and right rear | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|        9 | Whitey    | Pembroke Whiteout  | mare     | grey     | none                | flea-bitten grey | pinfiring over medial splint bones                          | XXX    |        4 | 1927-06-25    | 1927-06-25    |
+|       10 | Gina      | Foxridge Gina      | mare     | black    | star                | none             | pinfiring over rear of hocks                                | XXX    |        5 | 1927-06-25    | 1927-06-25    |
+|       11 | Roadshow  | Roadshow Hall      | stallion | bay      | star strip and snip |                  | pinfiring                                                   | XXX    |        2 | 1927-06-25    | 1927-06-25    |
++----------+-----------+--------------------+----------+----------+---------------------+------------------+-------------------------------------------------------------+--------+----------+---------------+---------------+
+11 rows in set (0.00 sec)
+
+mysql> SELECT * FROM events;
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| event_id | horse_id | date_reported       | reporter | event        | narrative                                                                                                                                                                                                                                                                                                                                                                                                                                |
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|        1 |        1 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|        2 |        1 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|        3 |        2 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses                                                                                                                                                                                                                                                                                                                                    |
+|        4 |        2 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth.  |
+|        5 |        2 | 2021-06-03 00:00:00 |        0 | dental       | Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.                                                                                          |
+|        6 |        3 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed no significant white line disease - receiving supplemental alfalfa                                                                                                                                                                                                                                                                                                                                                |
+|        7 |        3 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|        8 |        3 | 2021-06-03 00:00:00 |        0 | dental       | Performed by Dr Katrina Glaude. Noticeable hooks, ridges and some ulcerations.                                                                                                                                                                                                                                                                                                                                                           |
+|        9 |        4 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       10 |        4 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       11 |        5 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       12 |        5 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       13 |        6 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       14 |        6 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       15 |        7 | 2021-05-18 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       16 |        7 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       17 |        8 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       18 |        8 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       19 |        9 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       20 |        9 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       21 |       10 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       22 |       10 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       23 |       11 | 2021-05-25 00:00:00 |        0 | farrier      | Jerry Harriman noticed white line disease                                                                                                                                                                                                                                                                                                                                                                                                |
+|       24 |       11 | 2021-05-25 00:00:00 |        0 | vaccinations | FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus                                                                                                                                                                                                                                                                                           |
+|       25 |        0 | 0000-00-00 00:00:00 |     NULL |              | NULL                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|       26 |        0 | 0000-00-00 00:00:00 |     NULL |              | NULL                                                                                                                                                                                                                                                                                                                                                                                                                                     |
++----------+----------+---------------------+----------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+26 rows in set (0.00 sec)
+
+mysql> DESCRIBE events;
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| Field         | Type                                                                                                       | Null | Key | Default   | Extra          |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+| event_id      | mediumint unsigned                                                                                         | NO   | PRI | NULL      | auto_increment |
+| horse_id      | mediumint unsigned                                                                                         | NO   | MUL | NULL      |                |
+| date_reported | datetime                                                                                                   | NO   | MUL | NULL      |                |
+| reporter      | mediumint unsigned                                                                                         | YES  |     | NULL      |                |
+| event         | enum('narrative','physical_exam','lameness_exam','dental','de-worming','vaccinations','farrier','labtest') | NO   |     | narrative |                |
+| narrative     | text                                                                                                       | YES  |     | NULL      |                |
++---------------+------------------------------------------------------------------------------------------------------------+------+-----+-----------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> DESCRIBE physicalexams;
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| Field         | Type                                                                                            | Null | Key | Default | Extra          |
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| pe_id         | mediumint unsigned                                                                              | NO   | PRI | NULL    | auto_increment |
+| event_id      | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| horse_id      | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| date_reported | datetime                                                                                        | NO   | MUL | NULL    |                |
+| reporter_id   | mediumint unsigned                                                                              | NO   | MUL | NULL    |                |
+| narrative     | text                                                                                            | YES  |     | NULL    |                |
+| bcs_1_5       | float(2,1)                                                                                      | YES  |     | NULL    |                |
+| crt           | enum('<1','<1.5','>1.5')                                                                        | YES  |     | NULL    |                |
+| mmfeel        | enum('moist','dry','tacky','slimy')                                                             | YES  |     | NULL    |                |
+| mmcolor       | enum('pink','pale','red','injected','hemorrhage','tattoo','pigmented','grey','purple','yellow') | YES  |     | NULL    |                |
+| mm_other      | text                                                                                            | YES  |     | NULL    |                |
+| dh_test       | enum('+','-')                                                                                   | YES  |     | NULL    |                |
+| temp          | float                                                                                           | YES  |     | NULL    |                |
+| pulse         | tinyint unsigned                                                                                | YES  |     | NULL    |                |
+| resp          | tinyint unsigned                                                                                | YES  |     | NULL    |                |
+| resp_other    | text                                                                                            | YES  |     | NULL    |                |
+| dplf          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dprf          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dplh          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dprh          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| dp_other      | text                                                                                            | YES  |     | NULL    |                |
+| gstl          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gsbl          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gstr          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gsbr          | enum('-','+','++')                                                                              | YES  |     | NULL    |                |
+| gs_other      | text                                                                                            | YES  |     | NULL    |                |
++---------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+26 rows in set (0.00 sec)
+
+mysql> CREATE TABLE physexgoogle (
+    -> pe_id MEDIUMINT UNSIGNED NOT NULL AUTOINCREMENT,
+    -> email VARCHAR(60) NOT NULL,
+    -> date_ DATE NOT NULL,
+    -> time TIME NOT NULL,
+    -> reporterVARCHAR(60) NOT NULL,
+    -> barn_name VARCHAR(60) NOT NULL,
+    -> history TEXT,
+    -> attitudeVARCHAR(20),
+    -> attitude_txtTEXT,
+    -> hx_eentVARCHAR(60),
+    -> hx_dgVARCHAR(60),
+    -> hx_cvVARCHAR(60),
+    -> hx_mskVARCHAR(60),
+    -> hx_respVARCHAR(60),
+    -> hx_neurVARCHAR(60),
+    -> hx_skinVARCHAR(60),
+    -> hx_lnVARCHAR(60),
+    -> hx_endoVARCHAR(60),
+    -> hx_utrepVARCHAR(60),
+    -> hx_txtTEXT,
+    -> eatn VARCHAR(20),
+    -> drnknVARCHAR(20),
+    -> urinatnVARCHAR(20),
+    -> defectnVARCHAR(20),
+    -> bcs_1_5 TINYINT UNSIGNED,
+    -> crt VARCHAR(20),
+    -> mm_feelVARCHAR(20),
+    -> mm_colorVARCHAR(20),
+    -> mm_txtTEXT,
+    -> dehyVARCHAR(20),
+    -> temp FLOAT,
+    -> pulse TINYINT UNSIGNED,
+    -> resp TINYINT UNSIGNED,
+    -> resp_txtTEXT,
+    -> dplf    enum('-','+','++'),
+    -> dprf enum('-','+','++'),
+    -> dplh enum('-','+','++'),
+    -> dprh enum('-','+','++'),
+    -> dp_txtTEXT,
+    -> gstl enum('-','+','++'),
+    -> gsbl enum('-','+','++'),
+    -> gstr enum('-','+','++'),
+    -> gsbr enum('-','+','++'),
+    -> gs_txtTEXT,
+    -> pe_eentVARCHAR(60),
+    -> pe_dgVARCHAR(60),
+    -> pe_cvVARCHAR(60),
+    -> pe_mskVARCHAR(60),
+    -> pe_respVARCHAR(60),
+    -> pe_neurVARCHAR(60),
+    -> pe_skinVARCHAR(60),
+    -> pe_lnVARCHAR(60),
+    -> pe_endoVARCHAR(60),
+    -> pe_utrepVARCHAR(60),
+    -> pe_txtTEXT)bvc
+    -> v kkijyhtgxc;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT,
+email VARCHAR(60) NOT NULL,
+date_ DATE NOT NULL,
+time TIME NOT NU' at line 2
+mysql> CREATE TABLE physexgoogle (
+    -> pe_id MEDIUMINT UNSIGNED NOT NULL AUTOINCREMENT,
+    -> email VARCHAR(60) NOT NULL,
+    -> date_ DATE NOT NULL,
+    -> time TIME NOT NULL,
+    -> reporter
+reporter                  reporter_since            reporters.first_name      reporters.reporter_id    
+reporter_id               reporters                 reporters.last_name       reporters.reporter_since 
+    -> reporter
+reporter                  reporter_since            reporters.first_name      reporters.reporter_id    
+reporter_id               reporters                 reporters.last_name       reporters.reporter_since 
+    -> reporterVARCHAR(60) NOT NULL,
+    -> barn_name
+Display all 895 possibilities? (y or n) 
+    -> barn_name 
+    -> pe_mskVARCHAR(60),
+    -> pe_respVARCHAR(60),
+    -> pe_neurVARCHAR(60),
+    -> pe_skinVARCHAR(60),
+    -> pe_lnVARCHAR(60),
+    -> pe_endoVARCHAR(60),
+    -> pe_utrepVARCHAR(60),
+    -> barn_namekufvlkuyfvkluyf;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT,
+email VARCHAR(60) NOT NULL,
+date_ DATE NOT NULL,
+time TIME NOT NU' at line 2
+mysql> CREATE TABLE physexgoogle (
+    -> pe_id  MEDIUMINT UNSIGNED NOT NULL AUTOINCREMENT,
+    -> email  VARCHAR(60) NOT NULL,
+    -> date_  DATE NOT NULL,
+    -> time  TIME NOT NULL,
+    -> reporter_name VARCHAR(60) NOT NULL,
+    -> barn_name
+Display all 895 possibilities? (y or n) 
+    -> barn_name  VARCHAR(60) NOT NULL,
+    -> history  TEXT,
+    -> attitude VARCHAR(20),
+    -> attitude_txt TEXT,
+    -> hx_eent VARCHAR(60),
+    -> hx_dg VARCHAR(60),
+    -> hx_cv VARCHAR(60),
+    -> hx_msk VARCHAR(60),
+    -> hx_resp VARCHAR(60),
+    -> hx_neur VARCHAR(60),
+    -> hx_skin VARCHAR(60),
+    -> hx_ln VARCHAR(60),
+    -> hx_endo VARCHAR(60),
+    -> hx_utrep VARCHAR(60),
+    -> hx_txt TEXT,
+    -> eatn  VARCHAR(20),
+    -> drnkn VARCHAR(20),
+    -> urinatn VARCHAR(20),
+    -> defectn VARCHAR(20),
+    -> bcs_1_5 
+Display all 895 possibilities? (y or n) 
+    -> bcs_1_5  TINYINT UNSIGNED,
+    -> crt
+Display all 895 possibilities? (y or n) 
+    -> crt  VARCHAR(20),
+    -> mm_feel VARCHAR(20),
+    -> mm_color  VARCHAR(20),
+    -> mm_txt  TEXT,
+    -> dehy VARCHAR(20),
+    -> temp     FLOAT,
+    -> pulse     TINYINT UNSIGNED,
+    -> resp     TINYINT UNSIGNED,
+    -> resp_txt TEXT,
+    -> dplf     enum('-','+','++'),
+    -> dprf    enum('-','+','++'),
+    -> dplh 
+Display all 895 possibilities? (y or n) 
+    -> dplh enum('-','+','++'),
+    -> dprh
+Display all 895 possibilities? (y or n) 
+    -> dprh enum('-','+','++'),
+    -> dp_txtTEXT,
+    -> gstl
+Display all 895 possibilities? (y or n) 
+    -> gstl enum('-','+','++'),
+    -> gsbl
+Display all 895 possibilities? (y or n) 
+    -> gsbl enum('-','+','++'),
+    -> gstr
+Display all 895 possibilities? (y or n) 
+    -> gstr enum('-','+','++'),
+    -> gsbr
+Display all 895 possibilities? (y or n) 
+    -> gsbr 
+Display all 895 possibilities? (y or n) 
+    -> gsbr enum('-','+','++'),
+    -> gs_txtTEXT,
+    -> pe_eentVARCHAR(60),
+    -> pe_dgVARCHAR(60),
+    -> pe_cvVARCHAR(60),
+    -> pe_mskVARCHAR(60),
+    -> pe_respVARCHAR(60),
+    -> pe_neurVARCHAR(60),
+    -> pe_skinVARCHAR(60),
+    -> pe_lnVARCHAR(60),
+    -> pe_endoVARCHAR(60),
+    -> pe_utrepVARCHAR(60),
+    -> pe_utrep VARCHAR(60),
+    -> pe_utrepVARCHAR(60),uyfkuyfcjhkgcnjhbgcn
+    -> 
+    -> 
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT,
+email  VARCHAR(60) NOT NULL,
+date_  DATE NOT NULL,
+time  TIME NOT' at line 2
+mysql> CREATE TABLE physexgoogle (
+    -> pe_id  MEDIUMINT UNSIGNED NOT NULL AUTOINCREMENT,
+    -> email  VARCHAR(60) NOT NULL,
+    -> date_  DATE NOT NULL,
+    -> time  TIME NOT NULL,
+    -> reporter_name VARCHAR(60) NOT NULL,
+    -> barn_name
+Display all 895 possibilities? (y or n) 
+    -> barn_name  VARCHAR(60) NOT NULL,
+    -> history  TEXT,
+    -> attitude VARCHAR(20),
+    -> attitude_txt TEXT,
+    -> hx_eent VARCHAR(60),
+    -> hx_dg VARCHAR(60),
+    -> hx_cv VARCHAR(60),
+    -> hx_msk VARCHAR(60),
+    -> hx_resp VARCHAR(60),
+    -> hx_neur VARCHAR(60),
+    -> hx_skin VARCHAR(60),
+    -> hx_ln VARCHAR(60),
+    -> hx_endo VARCHAR(60),
+    -> hx_utrep VARCHAR(60),
+    -> hx_txt TEXT,
+    -> eatn  VARCHAR(20),
+    -> drnkn VARCHAR(20),
+    -> urinatn VARCHAR(20),
+    -> defectn VARCHAR(20),
+    -> bcs_1_5 
+Display all 895 possibilities? (y or n) 
+    -> bcs  TINYINT UNSIGNED,
+    -> crt
+Display all 895 possibilities? (y or n) 
+    -> crt  VARCHAR(20),
+    -> mm_feel VARCHAR(20),
+    -> mm_color  VARCHAR(20),
+    -> mm_txt  TEXT,
+    -> dehy VARCHAR(20),
+    -> temp     FLOAT,
+    -> pulse     TINYINT UNSIGNED,
+    -> resp     TINYINT UNSIGNED,
+    -> resp_txt TEXT,
+    -> dplf     ENUM('-', '+',' ++'),
+    -> dprf    ENUM('-', '+', '++'),
+    -> dplh 
+Display all 895 possibilities? (y or n) 
+    -> dplh ENUM('-', '+', '++'),
+    -> dprh
+Display all 895 possibilities? (y or n) 
+    -> dprh ENUM('-', '+', '++'),
+    -> dp_txtTEXT,
+    -> gstl
+Display all 895 possibilities? (y or n) 
+    -> gstl ENUM('-', '+', '++'),
+    -> gsbl
+Display all 895 possibilities? (y or n) 
+    -> gsbl ENUM('-', '+', '++'),
+    -> gstr
+Display all 895 possibilities? (y or n) 
+    -> gstr ENUM('-', '+', '++'),
+    -> gsbr
+Display all 895 possibilities? (y or n) 
+    -> gsbr 
+Display all 895 possibilities? (y or n) 
+    -> gsbr ENUM('-', '+', '++'),
+    -> gs_txtTEXT,
+    -> pe_eentVARCHAR(60),
+    -> pe_dg VARCHAR(60),
+    -> pe_eentVARCHAR(60),
+    -> pe_eent VARCHAR(60),
+    -> pe_msk VARCHAR(60),
+    -> pe_resp VARCHAR(60),
+    -> pe_neur VARCHAR(60),
+    -> pe_skin VARCHAR(60),
+    -> pe_ln VARCHAR(60),
+    -> pe_endo VARCHAR(60),
+    -> pe_utrep VARCHAR(60),
+    -> pe_txtTEXT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT,
+email  VARCHAR(60) NOT NULL,
+date_  DATE NOT NULL,
+time  TIME NOT' at line 2
+mysql> pe_txtTEXT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pe_txtTEXT)' at line 1
+mysql> pe_txtTEXT);CREATE TABLE physexgoogle (pe_id  MEDIUMINT UNSIGNED NOT NULL AUTOINCREMENT, email  VARCHAR(60) NOT NULL, date  DATE NOT NULL, time TIME NOT NULL, reporter_name VARCHAR(60) NOT NULL, barn_name  VARCHAR(60) NOT NULL, history  TEXT, attitude VARCHAR(20), attitude_txt TEXT, hx_eent VARCHAR(60), hx_dg VARCHAR(60), hx_cv VARCHAR(60), hx_msk VARCHAR(60), hx_resp VARCHAR(60), hx_neur VARCHAR(60), hx_skin VARCHAR(60), hx_ln VARCHAR(60), hx_endo VARCHAR(60), hx_utrep VARCHAR(60), hx_txt TEXT, eatn  VARCHAR(20), drnkn VARCHAR(20), urinatn VARCHAR(20), defectn VARCHAR(20), bcs  TINYINT UNSIGNED, crt  VARCHAR(20), mm_feel VARCHAR(20), mm_color  VARCHAR(20), mm_txt  TEXT, dehy VARCHAR(20), temp     FLOAT, pulse     TINYINT UNSIGNED, resp     TINYINT UNSIGNED, resp_txt TEXT, dplf     ENUM('-', '+',' ++'), dprf    ENUM('-', '+', '++'), dplh ENUM('-', '+', '++'), dprh ENUM('-', '+', '++'), dp_txt TEXT, gstl ENUM('-', '+', '++'), gsbl ENUM('-', '+', '++'), gstr ENUM('-', '+', '++'), gsbr ENUM('-', '+', '++'), gs_txt TEXT, pe_eent VARCHAR(60), pe_dg VARCHAR(60), pe_cv VARCHAR(60), pe_msk VARCHAR(60), pe_resp VARCHAR(60), pe_neur VARCHAR(60), pe_skin VARCHAR(60), pe_ln VARCHAR(60), pe_endo VARCHAR(60), pe_utrep VARCHAR(60), pe_txt TEXT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'pe_txtTEXT)' at line 1
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT, email  VARCHAR(60) NOT NULL, date  DATE NOT NULL, time TIME NOT N' at line 1
+mysql> CREATE TABLE physexgoogle (pe_id  MEDIUMINT UNSIGNED NOT NULL AUTOINCREMENT, email  VARCHAR(60) NOT NULL, date  DATE NOT NULL, time TIME NOT NULL, reporter_name VARCHAR(60) NOT NULL, barn_name  VARCHAR(60) NOT NULL, history  TEXT, attitude VARCHAR(20), attitude_txt TEXT, hx_eent VARCHAR(60), hx_dg VARCHAR(60), hx_cv VARCHAR(60), hx_msk VARCHAR(60), hx_resp VARCHAR(60), hx_neur VARCHAR(60), hx_skin VARCHAR(60), hx_ln VARCHAR(60), hx_endo VARCHAR(60), hx_utrep VARCHAR(60), hx_txt TEXT, eatn  VARCHAR(20), drnkn VARCHAR(20), urinatn VARCHAR(20), defectn VARCHAR(20), bcs  TINYINT UNSIGNED, crt  VARCHAR(20), mm_feel VARCHAR(20), mm_color  VARCHAR(20), mm_txt  TEXT, dehy VARCHAR(20), temp     FLOAT, pulse     TINYINT UNSIGNED, resp     TINYINT UNSIGNED, resp_txt TEXT, dplf     ENUM('-', '+',' ++'), dprf    ENUM('-', '+', '++'), dplh ENUM('-', '+', '++'), dprh ENUM('-', '+', '++'), dp_txt TEXT, gstl ENUM('-', '+', '++'), gsbl ENUM('-', '+', '++'), gstr ENUM('-', '+', '++'), gsbr ENUM('-', '+', '++'), gs_txt TEXT, pe_eent VARCHAR(60), pe_dg VARCHAR(60), pe_cv VARCHAR(60), pe_msk VARCHAR(60), pe_resp VARCHAR(60), pe_neur VARCHAR(60), pe_skin VARCHAR(60), pe_ln VARCHAR(60), pe_endo VARCHAR(60), pe_utrep VARCHAR(60), pe_txt TEXT);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AUTOINCREMENT, email  VARCHAR(60) NOT NULL, date  DATE NOT NULL, time TIME NOT N' at line 1
+mysql> CREATE TABLE physexgoogle (pe_id  MEDIUMINT UNSIGNED NOT NULL
+    -> jyhcfjhg
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'jyhcfjhg' at line 2
+mysql> CREATE TABLE physexgoogle (pe_id  MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT, email  VARCHAR(60) NOT NULL, date  DATE NOT NULL, time TIME NOT NULL, reporter_name VARCHAR(60) NOT NULL, barn_name  VARCHAR(60) NOT NULL, history  TEXT, attitude VARCHAR(20), attitude_txt TEXT, hx_eent VARCHAR(60), hx_dg VARCHAR(60), hx_cv VARCHAR(60), hx_msk VARCHAR(60), hx_resp VARCHAR(60), hx_neur VARCHAR(60), hx_skin VARCHAR(60), hx_ln VARCHAR(60), hx_endo VARCHAR(60), hx_utrep VARCHAR(60), hx_txt TEXT, eatn  VARCHAR(20), drnkn VARCHAR(20), urinatn VARCHAR(20), defectn VARCHAR(20), bcs  TINYINT UNSIGNED, crt  VARCHAR(20), mm_feel VARCHAR(20), mm_color  VARCHAR(20), mm_txt  TEXT, dehy VARCHAR(20), temp     FLOAT, pulse     TINYINT UNSIGNED, resp     TINYINT UNSIGNED, resp_txt TEXT, dplf     ENUM('-', '+',' ++'), dprf    ENUM('-', '+', '++'), dplh ENUM('-', '+', '++'), dprh ENUM('-', '+', '++'), dp_txt TEXT, gstl ENUM('-', '+', '++'), gsbl ENUM('-', '+', '++'), gstr ENUM('-', '+', '++'), gsbr ENUM('-', '+', '++'), gs_txt TEXT, pe_eent VARCHAR(60), pe_dg VARCHAR(60), pe_cv VARCHAR(60), pe_msk VARCHAR(60), pe_resp VARCHAR(60), pe_neur VARCHAR(60), pe_skin VARCHAR(60), pe_ln VARCHAR(60), pe_endo VARCHAR(60), pe_utrep VARCHAR(60), pe_txt TEXT);
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> CREATE TABLE physexgoogle (pe_id  MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT, email  VARCHAR(60) NOT NULL, date  DATE NOT NULL, time TIME NOT NULL, reporter_name VARCHAR(60) NOT NULL, barn_name  VARCHAR(60) NOT NULL, history  TEXT, attitude VARCHAR(20), attitude_txt TEXT, hx_eent VARCHAR(60), hx_dg VARCHAR(60), hx_cv VARCHAR(60), hx_msk VARCHAR(60), hx_resp VARCHAR(60), hx_neur VARCHAR(60), hx_skin VARCHAR(60), hx_ln VARCHAR(60), hx_endo VARCHAR(60), hx_utrep VARCHAR(60), hx_txt TEXT, eatn  VARCHAR(20), drnkn VARCHAR(20), urinatn VARCHAR(20), defectn VARCHAR(20), bcs  TINYINT UNSIGNED, crt  VARCHAR(20), mm_feel VARCHAR(20), mm_color  VARCHAR(20), mm_txt  TEXT, dehy VARCHAR(20), temp     FLOAT, pulse     TINYINT UNSIGNED, resp     TINYINT UNSIGNED, resp_txt TEXT, dplf     ENUM('-', '+',' ++'), dprf    ENUM('-', '+', '++'), dplh ENUM('-', '+', '++'), dprh ENUM('-', '+', '++'), dp_txt TEXT, gstl ENUM('-', '+', '++'), gsbl ENUM('-', '+', '++'), gstr ENUM('-', '+', '++'), gsbr ENUM('-', '+', '++'), gs_txt TEXT, pe_eent VARCHAR(60), pe_dg VARCHAR(60), pe_cv VARCHAR(60), pe_msk VARCHAR(60), pe_resp VARCHAR(60), pe_neur VARCHAR(60), pe_skin VARCHAR(60), pe_ln VARCHAR(60), pe_endo VARCHAR(60), pe_utrep VARCHAR(60), pe_txt TEXT, PRIMARY KEY (pe_id));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> DESCRIBE physexgoogle;
++---------------+---------------------+------+-----+---------+----------------+
+| Field         | Type                | Null | Key | Default | Extra          |
++---------------+---------------------+------+-----+---------+----------------+
+| pe_id         | mediumint unsigned  | NO   | PRI | NULL    | auto_increment |
+| email         | varchar(60)         | NO   |     | NULL    |                |
+| date          | date                | NO   |     | NULL    |                |
+| time          | time                | NO   |     | NULL    |                |
+| reporter_name | varchar(60)         | NO   |     | NULL    |                |
+| barn_name     | varchar(60)         | NO   |     | NULL    |                |
+| history       | text                | YES  |     | NULL    |                |
+| attitude      | varchar(20)         | YES  |     | NULL    |                |
+| attitude_txt  | text                | YES  |     | NULL    |                |
+| hx_eent       | varchar(60)         | YES  |     | NULL    |                |
+| hx_dg         | varchar(60)         | YES  |     | NULL    |                |
+| hx_cv         | varchar(60)         | YES  |     | NULL    |                |
+| hx_msk        | varchar(60)         | YES  |     | NULL    |                |
+| hx_resp       | varchar(60)         | YES  |     | NULL    |                |
+| hx_neur       | varchar(60)         | YES  |     | NULL    |                |
+| hx_skin       | varchar(60)         | YES  |     | NULL    |                |
+| hx_ln         | varchar(60)         | YES  |     | NULL    |                |
+| hx_endo       | varchar(60)         | YES  |     | NULL    |                |
+| hx_utrep      | varchar(60)         | YES  |     | NULL    |                |
+| hx_txt        | text                | YES  |     | NULL    |                |
+| eatn          | varchar(20)         | YES  |     | NULL    |                |
+| drnkn         | varchar(20)         | YES  |     | NULL    |                |
+| urinatn       | varchar(20)         | YES  |     | NULL    |                |
+| defectn       | varchar(20)         | YES  |     | NULL    |                |
+| bcs           | tinyint unsigned    | YES  |     | NULL    |                |
+| crt           | varchar(20)         | YES  |     | NULL    |                |
+| mm_feel       | varchar(20)         | YES  |     | NULL    |                |
+| mm_color      | varchar(20)         | YES  |     | NULL    |                |
+| mm_txt        | text                | YES  |     | NULL    |                |
+| dehy          | varchar(20)         | YES  |     | NULL    |                |
+| temp          | float               | YES  |     | NULL    |                |
+| pulse         | tinyint unsigned    | YES  |     | NULL    |                |
+| resp          | tinyint unsigned    | YES  |     | NULL    |                |
+| resp_txt      | text                | YES  |     | NULL    |                |
+| dplf          | enum('-','+',' ++') | YES  |     | NULL    |                |
+| dprf          | enum('-','+','++')  | YES  |     | NULL    |                |
+| dplh          | enum('-','+','++')  | YES  |     | NULL    |                |
+| dprh          | enum('-','+','++')  | YES  |     | NULL    |                |
+| dp_txt        | text                | YES  |     | NULL    |                |
+| gstl          | enum('-','+','++')  | YES  |     | NULL    |                |
+| gsbl          | enum('-','+','++')  | YES  |     | NULL    |                |
+| gstr          | enum('-','+','++')  | YES  |     | NULL    |                |
+| gsbr          | enum('-','+','++')  | YES  |     | NULL    |                |
+| gs_txt        | text                | YES  |     | NULL    |                |
+| pe_eent       | varchar(60)         | YES  |     | NULL    |                |
+| pe_dg         | varchar(60)         | YES  |     | NULL    |                |
+| pe_cv         | varchar(60)         | YES  |     | NULL    |                |
+| pe_msk        | varchar(60)         | YES  |     | NULL    |                |
+| pe_resp       | varchar(60)         | YES  |     | NULL    |                |
+| pe_neur       | varchar(60)         | YES  |     | NULL    |                |
+| pe_skin       | varchar(60)         | YES  |     | NULL    |                |
+| pe_ln         | varchar(60)         | YES  |     | NULL    |                |
+| pe_endo       | varchar(60)         | YES  |     | NULL    |                |
+| pe_utrep      | varchar(60)         | YES  |     | NULL    |                |
+| pe_txt        | text                | YES  |     | NULL    |                |
++---------------+---------------------+------+-----+---------+----------------+
+55 rows in set (0.00 sec)
+
+mysql> 
+
