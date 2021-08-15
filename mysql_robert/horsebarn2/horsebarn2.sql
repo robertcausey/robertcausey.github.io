@@ -28,7 +28,7 @@ CREATE TABLE `avs196` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,7 +54,7 @@ CREATE TABLE `avs303` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `avs397` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,7 +108,7 @@ CREATE TABLE `donors` (
   PRIMARY KEY (`donor_id`),
   UNIQUE KEY `first_name` (`first_name`),
   UNIQUE KEY `last_name` (`last_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +137,7 @@ CREATE TABLE `events` (
   PRIMARY KEY (`event_id`),
   KEY `horse_id` (`horse_id`),
   KEY `date_reported` (`date_reported`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `horses` (
   UNIQUE KEY `barn_name` (`barn_name`),
   UNIQUE KEY `reg_name` (`reg_name`),
   KEY `donor_id` (`donor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,6 +185,82 @@ LOCK TABLES `horses` WRITE;
 /*!40000 ALTER TABLE `horses` DISABLE KEYS */;
 INSERT INTO `horses` VALUES (1,'Bliss','Blisstex','mare','brown','big beautiful star','none','none','T1911',1,'1927-06-25','1927-06-25'),(2,'Francis','Upwind Benchmark','gelding','buckskin','star','none','none','XXX',2,'1927-06-25','1927-06-25'),(3,'Dixie','Dixie Road Jazz','mare','bay','crescent moon','none','none','XXX',2,'1927-06-25','1927-06-25'),(4,'Sara','Saranaud','mare','bay','none','none','white pastern right front','XXX',2,'1927-06-25','1927-06-25'),(5,'Laney','Strainght n Narrow','mare','bay','star','dapples','white pastern right rear','XXX',2,'1927-06-25','1927-06-25'),(6,'Blue','Lahars Baby Blue','mare','bay','none','none','white pasterns right and left rear','XXX',3,'1927-06-25','1927-06-25'),(7,'Diva','Pembroke Diva','mare','bay','none','none','white pastern right rear','XXX',4,'1927-06-25','1927-06-25'),(8,'Suzie','Pembroke Suzie','mare','bay','none','none','three white pasterns: left front, lect rear, and right rear','XXX',4,'1927-06-25','1927-06-25'),(9,'Whitey','Pembroke Whiteout','mare','grey','none','flea-bitten grey','pinfiring over medial splint bones','XXX',4,'1927-06-25','1927-06-25'),(10,'Gina','Foxridge Gina','mare','black','star','none','pinfiring over rear of hocks','XXX',5,'1927-06-25','1927-06-25'),(11,'Roadshow','Roadshow Hall','stallion','bay','star strip and snip','','pinfiring','XXX',2,'1927-06-25','1927-06-25');
 /*!40000 ALTER TABLE `horses` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `physexgoogle`
+--
+
+DROP TABLE IF EXISTS `physexgoogle`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `physexgoogle` (
+  `pe_id` mediumint unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(60) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `reporter_name` varchar(60) NOT NULL,
+  `barn_name` varchar(60) NOT NULL,
+  `history` text,
+  `attitude` varchar(20) DEFAULT NULL,
+  `attitude_txt` text,
+  `hx_eent` varchar(60) DEFAULT NULL,
+  `hx_dg` varchar(60) DEFAULT NULL,
+  `hx_cv` varchar(60) DEFAULT NULL,
+  `hx_msk` varchar(60) DEFAULT NULL,
+  `hx_resp` varchar(60) DEFAULT NULL,
+  `hx_neur` varchar(60) DEFAULT NULL,
+  `hx_skin` varchar(60) DEFAULT NULL,
+  `hx_ln` varchar(60) DEFAULT NULL,
+  `hx_endo` varchar(60) DEFAULT NULL,
+  `hx_utrep` varchar(60) DEFAULT NULL,
+  `hx_txt` text,
+  `eatn` varchar(20) DEFAULT NULL,
+  `drnkn` varchar(20) DEFAULT NULL,
+  `urinatn` varchar(20) DEFAULT NULL,
+  `defectn` varchar(20) DEFAULT NULL,
+  `bcs` tinyint unsigned DEFAULT NULL,
+  `crt` varchar(20) DEFAULT NULL,
+  `mm_feel` varchar(20) DEFAULT NULL,
+  `mm_color` varchar(20) DEFAULT NULL,
+  `mm_txt` text,
+  `dehy` varchar(20) DEFAULT NULL,
+  `temp` float DEFAULT NULL,
+  `pulse` tinyint unsigned DEFAULT NULL,
+  `resp` tinyint unsigned DEFAULT NULL,
+  `resp_txt` text,
+  `dplf` enum('-','+',' ++') DEFAULT NULL,
+  `dprf` enum('-','+','++') DEFAULT NULL,
+  `dplh` enum('-','+','++') DEFAULT NULL,
+  `dprh` enum('-','+','++') DEFAULT NULL,
+  `dp_txt` text,
+  `gstl` enum('-','+','++') DEFAULT NULL,
+  `gsbl` enum('-','+','++') DEFAULT NULL,
+  `gstr` enum('-','+','++') DEFAULT NULL,
+  `gsbr` enum('-','+','++') DEFAULT NULL,
+  `gs_txt` text,
+  `pe_eent` varchar(60) DEFAULT NULL,
+  `pe_dg` varchar(60) DEFAULT NULL,
+  `pe_cv` varchar(60) DEFAULT NULL,
+  `pe_msk` varchar(60) DEFAULT NULL,
+  `pe_resp` varchar(60) DEFAULT NULL,
+  `pe_neur` varchar(60) DEFAULT NULL,
+  `pe_skin` varchar(60) DEFAULT NULL,
+  `pe_ln` varchar(60) DEFAULT NULL,
+  `pe_endo` varchar(60) DEFAULT NULL,
+  `pe_utrep` varchar(60) DEFAULT NULL,
+  `pe_txt` text,
+  PRIMARY KEY (`pe_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `physexgoogle`
+--
+
+LOCK TABLES `physexgoogle` WRITE;
+/*!40000 ALTER TABLE `physexgoogle` DISABLE KEYS */;
+/*!40000 ALTER TABLE `physexgoogle` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -226,7 +302,7 @@ CREATE TABLE `physicalexams` (
   KEY `horse_id` (`horse_id`),
   KEY `date_reported` (`date_reported`),
   KEY `reporter_id` (`reporter_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -253,7 +329,7 @@ CREATE TABLE `reporters` (
   PRIMARY KEY (`reporter_id`),
   UNIQUE KEY `first_name` (`first_name`),
   UNIQUE KEY `last_name` (`last_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -278,7 +354,7 @@ CREATE TABLE `staff` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -304,7 +380,7 @@ CREATE TABLE `summer2021` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -326,4 +402,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-25 15:27:55
+-- Dump completed on 2021-08-15 17:19:22
