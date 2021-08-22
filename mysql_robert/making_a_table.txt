@@ -1,0 +1,4 @@
+It is probably easiest to do this by having column information of each line, with a comma at the end. When it looks good use the J command to 
+put the whole command together. Remember to include the PRIMARY KEY at the end.
+********************************
+CREATE TABLE soaps (soap_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT, email VARCHAR(60) NOT NULL, date DATE NOT NULL,	time TIME NOT NULL, reporter_name VARCHAR(60) NOT NULL, barn_name VARCHAR(60) NOT NULL, subjective TEXT, objective TEXT, obj_attach TEXT, assess TEXT, plan TEXT, PRIMARY KEY (soap_id));

@@ -28,7 +28,7 @@ CREATE TABLE `avs196` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -54,7 +54,7 @@ CREATE TABLE `avs303` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -80,7 +80,7 @@ CREATE TABLE `avs397` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -108,7 +108,7 @@ CREATE TABLE `donors` (
   PRIMARY KEY (`donor_id`),
   UNIQUE KEY `first_name` (`first_name`),
   UNIQUE KEY `last_name` (`last_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +137,7 @@ CREATE TABLE `events` (
   PRIMARY KEY (`event_id`),
   KEY `horse_id` (`horse_id`),
   KEY `date_reported` (`date_reported`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `horses` (
   UNIQUE KEY `barn_name` (`barn_name`),
   UNIQUE KEY `reg_name` (`reg_name`),
   KEY `donor_id` (`donor_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -251,7 +251,7 @@ CREATE TABLE `physexgoogle` (
   `pe_utrep` varchar(60) DEFAULT NULL,
   `pe_txt` text,
   PRIMARY KEY (`pe_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -260,6 +260,7 @@ CREATE TABLE `physexgoogle` (
 
 LOCK TABLES `physexgoogle` WRITE;
 /*!40000 ALTER TABLE `physexgoogle` DISABLE KEYS */;
+INSERT INTO `physexgoogle` VALUES (1,'rcausey@maine.edu','2021-07-15','07:00:00','Cassondra Wood','Francis','Off feed this morning.  Breathing fast.','Dull','','Normal','Possibly abnormal','Possibly abnormal','Normal','Possibly abnormal','Normal','Normal','Normal','Normal','Normal','Off feed, no energy, breathing hard','Abnormal','Abnormal','Normal','Normal',3,'< 1.5','Moist','Pink, purple','Relatively nornal','Positive',101.2,52,40,'Breathing hard','-','-','-','-','','+','+','-','-','More on left than right','Normal','Possibly abnormal','Possibly abnormal','Normal','Possibly abnormal','Normal','Normal','Normal','Normal','Normal','Elevated pulse, dull, breathing hard \r'),(2,'rcausey@maine.edu','2021-07-17','07:00:00','Cassondra Wood','Francis','follow up','QAR','','','','','','','','','','','','','','','','',0,'','','','','Negative',100.3,44,8,'','-','-','-','-','','+','+','+','+','','','','','','','','','','','','\r'),(3,'rcausey@maine.edu','2021-07-18','07:00:00','Cassondra Wood','Francis','follow up','','','','','Possibly abnormal','','','','','','','','Slightly Dehydrated','','','','',0,'','','','','Positive',101,44,12,'','','','','','','+','+','+','+','','','','Possibly abnormal','','','','','','','','Sl dehydrated.\r'),(4,'rcausey@maine.edu','2021-07-22','07:00:00','Gretchen','Francis','follow up - diarrhea. Still on ulcerguard and red cell','weight tape = 1096','','','Possibly abnormal','','','','','','','','','Diarrhea','','','','',0,'','','','','',100.8,44,0,'','','','','','','','','','','','','','','','','','','','','','\r'),(5,'rcausey@maine.edu','2021-07-26','07:00:00','Cassondra','Francis','follow up - concerned if well enough to see farrier','','','','','','','','','','','','','','','','','',0,'','','','','',101.5,52,12,'','','','','','','+','+','+','+','','','','','','','','','','','','\r'),(6,'rcausey@maine.edu','2021-07-27','07:00:00','Gretchen','Francis','Follow - up good appetitie','BAR','','','Possibly abnormal','','','','','','','','','Diarrhea','','','','',0,'','','','','',100,52,0,'','','','','','','','','','','','','','','','','','','','','','\r'),(7,'rcausey@maine.edu','2021-07-29','07:00:00','Gretchen','Francis','follow up','BAR','Weight tape 1,115','','','','','','','','','','','','','','','',0,'','','','','',0,0,0,'','','','','','','','','','','','','','','','','','','','','','\r'),(8,'rcausey@maine.edu','2021-08-01','07:00:00','Gretchen','Francis','follow up','BAR','Weight tape 1115','','','','','','','','','','','','','','','',0,'','','','','',100.4,52,0,'','','','','','','','','','','','','','','','','','','','','','Diarrhea\r'),(9,'gfeller@maine.edu','2021-08-04','07:00:00','Gretchen Gfeller','Francis','Follow up','QAR','','','','','','','','','','','','','Normal','','','Abnormal',0,'','','','','',100.5,52,0,'','','','','','','','','','','','','','','','','','','','','','\r'),(10,'gfeller@maine.edu','2021-08-06','07:00:00','Gretchen Gfeller','Francis','Follow up','QAR','W 1065','','','','','','','','','','','','','','','Abnormal',0,'','','','','',101.3,52,0,'','','','','','','','','','','','','','','','','','','','','','\r'),(11,'gfeller@maine.edu','2021-08-07','07:00:00','Gretchen Gfeller','Francis','Follow up','Dull','','','','','','','','','','','','','Normal','','','Abnormal',0,'','','','','',100.7,52,0,'','','','','','','','','','','','','','','','','','','','','','\r'),(12,'cassondra.wood@maine.edu','2021-08-10','07:00:00','Cassie Wood','Francis','Routine','Depressed','','','','','','','','','','','','','Normal','Normal','Abnormal','Abnormal',3,'> 1.5','Moist','Pale','','Positive',101,56,12,'','-','-','-','-','','+','++','+','++','','','','','','','','','','','','\r'),(13,'cassondra.wood@maine.edu','2021-08-10','07:00:00','Cassie Wood','Francis','Routine','Depressed','','','','','','','','','','','','','Normal','Normal','Abnormal','Abnormal',3,'> 1.5','Moist','Pale','','Positive',101.4,52,12,'','-','-','-','-','','+','++','+','++','','','','','','','','','','','','\r'),(14,'cassondra.wood@maine.edu','2021-08-12','07:00:00','Cassie Wood','Francis','Routine','Depressed','','','','','','','','','','','','','Normal','Normal','Abnormal','Abnormal',3,'> 1.5','Moist','Pale','','Positive',101.5,60,20,'','-','-','-','-','','+','++','+','++','','','','','','','','','','','','\r'),(15,'cassondra.wood@maine.edu','2021-08-13','07:00:00','Cassie Wood','Francis','Routine','Dull','','','','','','','','','','','','','Normal','Normal','Abnormal','Abnormal',3,'> 1.5','Moist','Pale','','Positive',101,60,20,'','-','-','-','-','','+','++','+','++','','','','','','','','','','','','\r'),(16,'gfeller@maine.edu','2021-08-14','07:00:00','Gretchen Gfeller','Francis','Follow up','Depressed','','','','','','','','','','','','','Normal','','','Abnormal',0,'','','','','',101,60,14,'','','','','','','','','','','','','','','','','','','','','','\r'),(17,'rcausey@maine.edu','2021-08-19','07:00:00','Cassondra and Gretchen','Francis','follow up. Brighter, more alert. Ate 1/2 grain soaked and dry feed via hand.','BAR','','','','','','','','','','','','','Normal','Normal','Normal','Normal',0,'','','','','Negative',100.7,44,12,'','','','','','','+','+','+','+','','','','','','','','','','','','\r'),(18,'alyssa.dau@maine.edu','2021-08-15','10:30:00','Alyssa Dau','Suzie','Summer check-in','BAR','BAR and excited','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','','Normal','Normal','Normal','Normal',6,'< 1.5','Moist','Pink','','Negative',100.3,36,16,'Slightly elevated since she ran to see me ','-','-','-','-','','+','+','+','+','Gut sounds good','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','\r'),(19,'alyssa.dau@maine.edu','2021-08-15','10:45:00','Alyssa Dau','Whiteout','Summer check-in','BAR','','Normal','Normal','Normal','Possibly abnormal','Normal','Normal','Normal','Normal','Normal','Normal','Hx of lameness in left hind','Abnormal','Normal','Normal','Abnormal',6,'< 1.5','Moist','Pink','','Negative',98.1,32,12,'','-','-','+','-','Hx of pulses in left hind','+','+','+','+','Gut sounds good','Normal','Possibly abnormal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Lameness/sort of low temp are normal for whiteout, known from previous exams. Recently had somewhat diarrhea in stall past couple of days, Gretchen stated she wasn\'t as interested in breakfast, but still ate. Gretchen continuing to monitor. Not too concerned at the moment. \r'),(20,'alyssa.dau@maine.edu','2021-08-15','11:00:00','Alyssa Dau','Blisstex','Summer check-in','BAR','','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','','Normal','Normal','Normal','Normal',6,'< 1.5','Moist','Pink','','Negative',99.6,32,12,'','-','-','-','-','','+','+','+','+','gut sounds normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','\r'),(21,'alyssa.dau@maine.edu','2021-08-15','11:00:00','Alyssa Dau','Diva','Summer check-in','BAR','','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','','Normal','Normal','Normal','Normal',6,'< 1.5','Moist','Pink','','Negative',100.4,32,14,'Diva has a very loud heart beat. May be from it being hot outside and was moving around. ','-','-','-','-','','+','+','+','+','Gut sounds normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','\r'),(22,'alyssa.dau@maine.edu','2021-08-15','11:15:00','Alyssa Dau','Laney','Summer check-in','BAR','','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','','Normal','Normal','Normal','Normal',8,'< 1.5','Moist','Pink','','Negative',99.3,36,16,'Ran to say hi, increased pulse + resp rate.  Not concerned','-','-','-','-','','+','+','+','+','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','\r'),(23,'alyssa.dau@maine.edu','2021-08-15','11:30:00','Alyssa Dau','Dixie','Summer check-in','BAR','','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','','Normal','Normal','Normal','Normal',9,'< 1.5','Moist','Pink','','Negative',99.9,36,13,'Hot outside, moving around. Not concerned','-','-','-','-','','+','+','+','+','normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','\r'),(24,'alyssa.dau@maine.edu','2021-08-15','11:30:00','Alyssa Dau','Sara','Summer check-in','BAR','','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','','Normal','Normal','Normal','Normal',8,'< 1.5','Moist','Pink','','Negative',99.6,32,13,'','-','-','-','-','','+','+','+','+','normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','\r'),(25,'alyssa.dau@maine.edu','2021-08-15','11:40:00','Alyssa Dau','Roadshow','Summer check-in','BAR','BAR + excited','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','','Normal','Normal','Normal','Normal',7,'< 1.5','Moist','Pink','','Negative',100.2,32,12,'','-','-','-','-','','+','+','+','+','normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','\r'),(26,'alyssa.dau@maine.edu','2021-08-15','11:40:00','Alyssa Dau','Gina','Summer check-in','BAR','','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','','Normal','Normal','Normal','Normal',9,'< 1.5','Moist','Pink','','Negative',100.3,36,14,'Had been walking around and is hot out, didn\'t want to be examined so pulse + resp increased. Not concerned. ','-','-','-','-','','+','+','+','+','normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal','Normal',NULL),(32,'cassondra.wood@maine.edu','2021-08-19','07:00:00','Cassie Wood','Francis','End of life care','Lame, tired, no ener','','','','','','','','','','','','Very unsteady and unable to support himself fully','Abnormal','Abnormal','Abnormal','Abnormal',3,'> 1.5','Moist','Pale','','Positive',100.5,68,20,'','-','-','-','-','','+','++','+','++',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `physexgoogle` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,7 +303,7 @@ CREATE TABLE `physicalexams` (
   KEY `horse_id` (`horse_id`),
   KEY `date_reported` (`date_reported`),
   KEY `reporter_id` (`reporter_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -329,7 +330,7 @@ CREATE TABLE `reporters` (
   PRIMARY KEY (`reporter_id`),
   UNIQUE KEY `first_name` (`first_name`),
   UNIQUE KEY `last_name` (`last_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,6 +340,39 @@ CREATE TABLE `reporters` (
 LOCK TABLES `reporters` WRITE;
 /*!40000 ALTER TABLE `reporters` DISABLE KEYS */;
 /*!40000 ALTER TABLE `reporters` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `soaps`
+--
+
+DROP TABLE IF EXISTS `soaps`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `soaps` (
+  `soap_id` mediumint unsigned NOT NULL AUTO_INCREMENT,
+  `email` varchar(60) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `reporter_name` varchar(60) NOT NULL,
+  `barn_name` varchar(60) NOT NULL,
+  `subjective` text,
+  `objective` text,
+  `obj_attach` text,
+  `assess` text,
+  `plan` text,
+  PRIMARY KEY (`soap_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `soaps`
+--
+
+LOCK TABLES `soaps` WRITE;
+/*!40000 ALTER TABLE `soaps` DISABLE KEYS */;
+INSERT INTO `soaps` VALUES (1,'rcausey@maine.edu','2021-05-18','08:00:00','Robert','Blisstex','Hoof trim','Jerry Harriman noticed white line disease','','Possibly nutritional ','Check hay quality & supplement everyone  with Alfalfa.\r'),(2,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Blisstex','Vaccination','Record attached','https://drive.google.com/open?id=15UiFzHx1Akv5FXYvv5ChMUETdoyJsxB8','yearly schedule','Due next year\r'),(3,'rcausey@maine.edu','2021-07-28','09:30:00','Robert','Blisstex','Dentistry','Records attached','https://drive.google.com/open?id=1QVXk7JHDHgv0TKw8S5Ph0q54Izkvxb5P','Yearly schedule','Due July 25, 2022\r'),(4,'rcausey@maine.edu','2021-05-18','09:00:00','Robert','Blue','---','Jerry Harriman noticed white line disease','','Possible nutritional deficiency ','supplement alfalfa and balancer\r'),(5,'rcausey@maine.edu','2021-07-09','09:30:00','Robert','Blue','Dentistry','Record attached','https://drive.google.com/open?id=1bxMTjJC-GQcgpmlT_qqor_WfwXsmi6dT','Yearly schedule','Due July 5th, 2022\r'),(6,'rcausey@maine.edu','2021-05-18','09:00:00','Robert','Diva','---','Jerry Harriman noticed white line disease','','possible nutritional deficiency ','Supplement with alfalfa\r'),(7,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Diva','Vaccination','Waiting for record. Received EWV-EE,WN, Rabies, Tetanus, Flu, Rhino ','','Yearly schedule','Due 5/26/2022\r'),(8,'rcausey@maine.edu','2021-07-28','09:30:00','Robert','Diva','Dentistry','Record attached','https://drive.google.com/open?id=12wXJ3hvAw8Z3GBt4w4lT9_xCzaqor26o','Yearly schedule','Due July 25, 2022\r'),(9,'rcausey@maine.edu','2021-05-18','08:00:00','Robert','Dixie','---','Jerry Harriman noticed no significant white line disease - receiving supplemental alfalfa','','On better nutrition.','no diet change \r'),(10,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Dixie','Vaccination','Record attached','https://drive.google.com/open?id=1FW_mbm98oRzu_mOTUg2SbrAHq_H2eRct','Yearly','Due May 26, 2022\r'),(11,'rcausey@maine.edu','2021-06-03','09:30:00','Robert','Dixie','Dentistry','Record attached','https://drive.google.com/open?id=1ZknMyTLwB-7J8V-Sxz8U4kXXz-RfUT_b','Yearly schedule','Due May 30, 2022\r'),(12,'rcausey@maine.edu','2021-05-25','08:00:00','Robert ','Francis','Farrier ','Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses','','Probably on sufficient nutrition ','recheck in 8 weeks\r'),(13,'rcausey@maine.edu','2021-05-25','01:00:00','Robert','Francis','Pre vaccination, dental exam','FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis\' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing\'s disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth. ','','Needs better dental care ','Contact Katrina Glaude\r'),(14,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Francis','Vaccination','Record attached','https://drive.google.com/open?id=184S-97YMFk6beSmnNGn3IvaiCf7TlIRA','Yearly','Due 26th May, 2022\r'),(15,'rcausey@maine.edu','2021-06-03','09:30:00','Robert','Francis','Dentistry','Record attached','https://drive.google.com/open?id=1-0oeJuKjrMZBZxUFuP_V-0Uj1MYeT5wi','6 mos  schedule','Due November 1, 2021\r'),(16,'rcausey@maine.edu','2021-06-03','09:00:00','Rcc','Francis','Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.','----','','----','----\r'),(17,'rcausey@maine.edu','2021-06-09','01:00:00','Robert','Francis','Blood drawn to evaluate ACTH levels','See attached lab report','https://drive.google.com/open?id=14tpmoPR5CnYxI8TgUuzonxiWuIC6uKLU','Francis does not have evidence of Cushing\'s disease. Base line ACTH is in normal range','Possibly recheck. No therapy for Cushing\'s disease to be used at this time\r'),(18,'rcausey@maine.edu','2021-07-13','07:00:00','Robert','Francis','Called that he is off feed tonight ','T 100.2 P52 R 12 gutsounds on right, less on left, slight digital pulse. Mm pink','','Possibly colic. Will consult with Cat Rukznis. Does not appear painful, just off feed ','Dx: Called Cat and we agreed no need for her to come out. Rx: 500mg Flunixin IV Cx: will call Cat in morning.\r'),(19,'rcausey@maine.edu','2021-07-15','01:30:00','Robert','Francis','Dull this morning, possibly dehydrated. Called Dennis Ruksznis. Loose stool ','Temp 100.4, pulse 50, resp 20. Dennis found mass in pelvic canal. No sign of colic or impactioj','','Not sure. Not  colic. Mass on ribs and pelvis may represent tumor','Dx. Dennis will run a cbc and chem panel.   Rx. Dennis gave 5L bag of fluids plus b vitamins. Sedated detomidine 2.5mg  CX Tell students \r'),(20,'rcausey@maine.edu','2021-07-16','01:00:00','Robert','Francis','CBC and chem panel results due to off feed','See attached results','https://drive.google.com/open?id=17Ao_evr0oURAbtyNCBqGHRejLadzcjIC','Elevated GGT and liver enzymes. Anemic. Concern about tumors on left rib and in pelvis','RX: Red Cell supplement - 1oz BID, PO. Approximately 30ml BID   DX: Recheck in two weeks\r'),(21,'rcausey@maine.edu','2021-07-27','09:00:00','Robert','Francis','CBC and Chem panel','See attached record','https://drive.google.com/open?id=1ljiKqG31DoXLHrJbzoxwkOhhfMkErcY1','Some response to red cell with increased hematocrit. Cat Ruksznis mentioned possibly a problem with the FLAVA ggt results and recommended running a cornell liver panel  ','Collect blood for cornell liver panel\r'),(22,'rcausey@maine.edu','2021-07-14','07:00:00','Robert ','Francis','Follow up exan from last night. Appetite vacj','T 100.2 P42 RESP 12','','Doing better. Seems like a spasmodic colic','Rx continue ulcerguard  Dx keep monitoring Cx called Cat Ruksznis and said no need to come out\r'),(23,'rcausey@maine.edu','2021-05-25','09:00:00','Robert','Gina','Hoof trim','Jerry Harriman noticed white line disease','','Possible nutritional deficiency ','supplement with balancer and alfafa\r'),(24,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Gina','Vaccination','Record attached','https://drive.google.com/open?id=15iGapqgP6GIb8djJSTJL9U8u75lAJhmO','Yearly schedule','Due May 26, 2022\r'),(25,'rcausey@maine.edu','2021-07-09','09:30:00','Robert','Gina','Dentistry','Record attached','https://drive.google.com/open?id=1Xuf7uHB8pePCAaRcR-ZkxwQWuEoMnNQA','Yearly schedule','Due July 05, 2022\r'),(26,'rcausey@maine.edu','2021-05-18','09:00:00','Robert','Laney','---','Jerry Harriman noticed white line disease','','Possible nutritional deficiency ','Supplement with alfafa\r'),(27,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Laney','Vaccination','Record attached','https://drive.google.com/open?id=1WyGK7-JIhcjJirOefKllojdvtFzDRJl1','Yearly schedule','Due May 26, 2022\r'),(28,'rcausey@maine.edu','2021-07-09','09:30:00','Robert','Laney','Dentistry','Record attached','https://drive.google.com/open?id=1SNz8SlF4562PDCCDI4KCcUaXkVo1PxJX','Yearly schedule','Due July 5th, 2022\r'),(29,'rcausey@maine.edu','2021-05-25','09:00:00','Robert','Roadshow','Hoof trim','Jerry Harriman noticed no significant white line disease - receiving high grain diet','','Nutritional needs met by grain?','supplement with alfalfa as a precaution\r'),(30,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Roadshow','Vaccination','Record attached','https://drive.google.com/open?id=16ekFOBVVEyFkdyPbT-x_IL3UVbioHdcT','Yearly schedule','Due May 26, 2022\r'),(31,'rcausey@maine.edu','2021-07-09','09:30:00','Robert','Roadshow','Dentistry','Record attached','https://drive.google.com/open?id=1vGN5BWdXx0u7CvOI7uc9nL8H5mKCUis9','Yearly schedule','Due July 5, 2022\r'),(32,'rcausey@maine.edu','2021-05-18','08:00:00','Robert','Sara','---','Jerry Harriman noticed white line disease','','possibly nutritional deficiency ','Put on ration balancer\r'),(33,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Sara','Vaccination','record attached','https://drive.google.com/open?id=1BOP43jzbWDV04K8muf93jn1tKdJfPiT8','Yearly schedule','Due May 26, 2022\r'),(34,'rcausey@maine.edu','2021-07-09','09:30:00','Robert','Sara','Dentistry','Record attached','https://drive.google.com/open?id=1zWwoYq0HAVP6OYu_K_9u6K0j6LXXH2PN','Yearly schedule','Due July 5, 2022\r'),(35,'rcausey@maine.edu','2021-05-25','09:00:00','Robert','Suzie','---','Jerry Harriman noticed white line disease','','Possible nutritional deficiency','supplement with alfalfa\r'),(36,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Suzie','Vaccination','record attached','https://drive.google.com/open?id=1attEyDPoJMXCSe5-Tks06Oc5wsn5FHwA','Yearly schedule','Due May 26, 2022\r'),(37,'rcausey@maine.edu','2021-07-28','09:30:00','Robert','Suzie','Dentistry','Record attached','https://drive.google.com/open?id=1dF-Sp2VvczfkYDGmpm1Ky6PeGitna3Cw','Yearly schedule','Due July 25, 2022\r'),(38,'rcausey@maine.edu','2021-08-02','06:00:00','Robert','Test horse','Test','Test','','Test ','test\r'),(39,'rcausey@maine.edu','2021-05-25','09:00:00','Robert','Whiteout','Hoof trim','Jerry Harriman noticed white line disease','','Possible nutritional deficiency ','supplement with alfalfa\r'),(40,'rcausey@maine.edu','2021-05-26','09:30:00','Robert','Whiteout','Vaccination','Waiting for record. Received EWV-EE,WN, Rabies, Tetanus, Flu, Rhino ','','Yearly schedule','Due May 26, 2022\r'),(41,'rcausey@maine.edu','2021-07-28','09:30:00','Robert','Whiteout','Dentistry','Records attached','https://drive.google.com/open?id=1WKTxDYgnYAXdkR4PUqsyUwZadW8CKYbi','On yearly schedule','Due July 25, 2022\r'),(42,'rcausey@maine.edu','2021-08-09','02:00:00','Robert','Francis','He has seemed dull. HR elevated, around 52. A little lethargic, possibly ataxic, preputial edema and a mass just ventral on the right side. Chose to contact Dennis Ruksznis who came and examined him. ','Large mass off pelvic vertebrae imaged using transrectal ultrasound.','','It appears he has metastatic neoplasia with lesions in vertebra, prepuce, and left flank. The disease is slowly progressive. We have tentatively elected to euthanize him on Thursday of next week. ','Continued daily physical examinations.  Hand walking, with redcell and ulcerguard. Will confirm appointment with Dennis for Thursday 19th.\r'),(43,'rcausey@maine.edu','2021-08-09','05:00:00','Robert Causey','Francis','Decision to euthanize a possibility','Have located owner, Wendy Russel','','Need to call owner for permission to euthanize','CX: Called Wendy Russel and she called back later in the day. Permission for euthanasia given over the phone.\r'),(44,'rcausey@maine.edu','2021-08-19','03:00:00','Robert Causey','Francis','Euthanasia scheduled for 3 PM today. Dennis Ruksznis to perform. Francis is noticeably more uncomfortable today and off feed altogether. Appears unsteady with heavy breathing. Posturing by pressing rump against wall ','At 7AM Temp 100.5, Pulse 68, Resp 20. Slow and unsteady on feet','','Euthanasia necessary today. ','Euthanasia - Francis was walked to the compost windrow where he was sedated with detomidine, and euthanized with pentobarbital by Dennis Ruksznis. On post-mortem examination numerous small tumors found throughout mesentary, lung, liver, intestine, and along vertebral column. Large tumors found in pelvic canal originating from lumbosacral vertebrae. A large tumor (orange size) was found on the base of the heart where the aorta exits, and may have impinged on the aorta wall. Samples of tumors from heart, lung, and prepuce were taken to VMDL and submitted for histopath. Each tumor was well circumscribed and did not appear to be locally metastatic.  Cut surface was somewhat hemorrhagic. Presumptive differential diagnoses include fibrosarcoma, leiomyosarcoma, hemangiosarcoma. ');
+/*!40000 ALTER TABLE `soaps` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -354,7 +388,7 @@ CREATE TABLE `staff` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -380,7 +414,7 @@ CREATE TABLE `summer2021` (
   `phone` varchar(12) DEFAULT NULL,
   `email` varchar(40) DEFAULT NULL,
   `class` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -402,4 +436,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-08-15 17:19:22
+-- Dump completed on 2021-08-21 23:46:46
