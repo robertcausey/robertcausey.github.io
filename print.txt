@@ -1,0 +1,170 @@
+MariaDB [horsebarn2]> SELECT * FROM soaps WHERE barn_name='Francis'\G
+*************************** 1. row ***************************
+      soap_id: 12
+        email: rcausey@maine.edu
+         date: 2021-05-25
+         time: 08:00:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: Farrier
+    objective: Jerry Harriman noticed no significant white line disease - on a higher grain ration than other horses
+   obj_attach:
+       assess: Probably on sufficient nutrition
+         plan: recheck in 8 weeks
+*************************** 2. row ***************************
+      soap_id: 13
+        email: rcausey@maine.edu
+         date: 2021-05-25
+         time: 01:00:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: Pre vaccination, dental exam
+    objective: FLAVA-Dennis Rucksznis: Rabies, Tetanus, Eastern/Western Equine encephalitis, West Nile virus, Equine Influenza, Equine Rhinopneumonitis virus. Has lost weight since Dennis' last visit. Dennis will pull a blood sample (ACTH) to test for Cushing's disease. Examination of teeth revealed reduction of capacity for mastication consistent with a horse of his age, but still some significant molars toward the rear of the mouth.
+   obj_attach:
+       assess: Needs better dental care
+         plan: Contact Katrina Glaude
+*************************** 3. row ***************************
+      soap_id: 14
+        email: rcausey@maine.edu
+         date: 2021-05-26
+         time: 09:30:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: Vaccination
+    objective: Record attached
+   obj_attach: https://drive.google.com/open?id=184S-97YMFk6beSmnNGn3IvaiCf7TlIRA
+       assess: Yearly
+         plan: Due 26th May, 2022
+*************************** 4. row ***************************
+      soap_id: 15
+        email: rcausey@maine.edu
+         date: 2021-06-03
+         time: 09:30:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: Dentistry
+    objective: Record attached
+   obj_attach: https://drive.google.com/open?id=1-0oeJuKjrMZBZxUFuP_V-0Uj1MYeT5wi
+       assess: 6 mos  schedule
+         plan: Due November 1, 2021
+*************************** 5. row ***************************
+      soap_id: 16
+        email: rcausey@maine.edu
+         date: 2021-06-03
+         time: 09:00:00
+reporter_name: Rcc
+    barn_name: Francis
+   subjective: Performed by Dr Katrina Glaude. Missing teeth, and a broken right lower canine. She suggested soaked alfalfa cubes as a way to manage weight. Minimal amount of floating was performed to preserve remaining teeth. Dr Glaude pulled two purple top tubes for ACTH. Tuuli Overturf picked them up and transported them to FLAVA for submission.
+    objective: ----
+   obj_attach:
+       assess: ----
+         plan: ----
+*************************** 6. row ***************************
+      soap_id: 17
+        email: rcausey@maine.edu
+         date: 2021-06-09
+         time: 01:00:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: Blood drawn to evaluate ACTH levels
+    objective: See attached lab report
+   obj_attach: https://drive.google.com/open?id=14tpmoPR5CnYxI8TgUuzonxiWuIC6uKLU
+       assess: Francis does not have evidence of Cushing's disease. Base line ACTH is in normal range
+         plan: Possibly recheck. No therapy for Cushing's disease to be used at this time
+*************************** 7. row ***************************
+      soap_id: 18
+        email: rcausey@maine.edu
+         date: 2021-07-13
+         time: 07:00:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: Called that he is off feed tonight
+    objective: T 100.2 P52 R 12 gutsounds on right, less on left, slight digital pulse. Mm pink
+   obj_attach:
+       assess: Possibly colic. Will consult with Cat Rukznis. Does not appear painful, just off feed
+         plan: Dx: Called Cat and we agreed no need for her to come out. Rx: 500mg Flunixin IV Cx: will call Cat in morning.
+*************************** 8. row ***************************
+      soap_id: 19
+        email: rcausey@maine.edu
+         date: 2021-07-15
+         time: 01:30:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: Dull this morning, possibly dehydrated. Called Dennis Ruksznis. Loose stool
+    objective: Temp 100.4, pulse 50, resp 20. Dennis found mass in pelvic canal. No sign of colic or impactioj
+   obj_attach:
+       assess: Not sure. Not  colic. Mass on ribs and pelvis may represent tumor
+         plan: Dx. Dennis will run a cbc and chem panel.   Rx. Dennis gave 5L bag of fluids plus b vitamins. Sedated detomidine 2.5mg  CX Tell students
+*************************** 9. row ***************************
+      soap_id: 20
+        email: rcausey@maine.edu
+         date: 2021-07-16
+         time: 01:00:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: CBC and chem panel results due to off feed
+    objective: See attached results
+   obj_attach: https://drive.google.com/open?id=17Ao_evr0oURAbtyNCBqGHRejLadzcjIC
+       assess: Elevated GGT and liver enzymes. Anemic. Concern about tumors on left rib and in pelvis
+         plan: RX: Red Cell supplement - 1oz BID, PO. Approximately 30ml BID   DX: Recheck in two weeks
+*************************** 10. row ***************************
+      soap_id: 21
+        email: rcausey@maine.edu
+         date: 2021-07-27
+         time: 09:00:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: CBC and Chem panel
+    objective: See attached record
+   obj_attach: https://drive.google.com/open?id=1ljiKqG31DoXLHrJbzoxwkOhhfMkErcY1
+       assess: Some response to red cell with increased hematocrit. Cat Ruksznis mentioned possibly a problem with the FLAVA ggt results and recommended running a cornell liver panel
+         plan: Collect blood for cornell liver panel
+*************************** 11. row ***************************
+      soap_id: 22
+        email: rcausey@maine.edu
+         date: 2021-07-14
+         time: 07:00:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: Follow up exan from last night. Appetite vacj
+    objective: T 100.2 P42 RESP 12
+   obj_attach:
+       assess: Doing better. Seems like a spasmodic colic
+         plan: Rx continue ulcerguard  Dx keep monitoring Cx called Cat Ruksznis and said no need to come out
+*************************** 12. row ***************************
+      soap_id: 42
+        email: rcausey@maine.edu
+         date: 2021-08-09
+         time: 02:00:00
+reporter_name: Robert
+    barn_name: Francis
+   subjective: He has seemed dull. HR elevated, around 52. A little lethargic, possibly ataxic, preputial edema and a mass just ventral on the right side. Chose to contact Dennis Ruksznis who came and examined him.
+    objective: Large mass off pelvic vertebrae imaged using transrectal ultrasound.
+   obj_attach:
+       assess: It appears he has metastatic neoplasia with lesions in vertebra, prepuce, and left flank. The disease is slowly progressive. We have tentatively elected to euthanize him on Thursday of next week.
+         plan: Continued daily physical examinations.  Hand walking, with redcell and ulcerguard. Will confirm appointment with Dennis for Thursday 19th.
+*************************** 13. row ***************************
+      soap_id: 43
+        email: rcausey@maine.edu
+         date: 2021-08-09
+         time: 05:00:00
+reporter_name: Robert Causey
+    barn_name: Francis
+   subjective: Decision to euthanize a possibility
+    objective: Have located owner, Wendy Russel
+   obj_attach:
+       assess: Need to call owner for permission to euthanize
+         plan: CX: Called Wendy Russel and she called back later in the day. Permission for euthanasia given over the phone.
+*************************** 14. row ***************************
+      soap_id: 44
+        email: rcausey@maine.edu
+         date: 2021-08-19
+         time: 03:00:00
+reporter_name: Robert Causey
+    barn_name: Francis
+   subjective: Euthanasia scheduled for 3 PM today. Dennis Ruksznis to perform. Francis is noticeably more uncomfortable today and off feed altogether. Appears unsteady with heavy breathing. Posturing by pressing rump against wall
+    objective: At 7AM Temp 100.5, Pulse 68, Resp 20. Slow and unsteady on feet
+   obj_attach:
+       assess: Euthanasia necessary today.
+         plan: Euthanasia - Francis was walked to the compost windrow where he was sedated with detomidine, and euthanized with pentobarbital by Dennis Ruksznis. On post-mortem examination numerous small tumors found throughout mesentary, lung, liver, intestine, and along vertebral column. Large tumors found in pelvic canal originating from lumbosacral vertebrae. A large tumor (orange size) was found on the base of the heart where the aorta exits, and may have impinged on the aorta wall. Samples of tumors from heart, lung, and prepuce were taken to VMDL and submitted for histopath. Each tumor was well circumscribed and did not appear to be locally metastatic.  Cut surface was somewhat hemorrhagic. Presumptive differential diagnoses include fibrosarcoma, leiomyosarcoma, hemangiosarcoma.
+14 rows in set (0.001 sec)
