@@ -1,20 +1,19 @@
-UMaine Equine Cooparitive Fall 2021 Contact List
+UMaine Equine Cooperative Fall 2021 Contact List (Updated 9/14/2021)
 +--------------------------------+--------------+---------------------+
 | name                           | phone        | class               |
 +--------------------------------+--------------+---------------------+
 | Causey, Robert C               | 207/922-7475 | Faculty Coordinator |
 | Astle, Cassie                  | 207/610-9483 | Equine Trainer      |
 | Philbrick,Maddy                | 207/745/2762 | Equine Grad_Asst    |
-| Alonso,Carmen Delia            | 207/499-1028 | AVS397/DT/SW        |
+| Alonso,Carmen Delia            | 207/710-6835 | AVS397/DT/SW        |
 | Banks,Grace                    | 207/240-7431 | AVS397/DT/SW        |
 | Baumann,Elizabeth Anne         | 207/922-8939 | AVS397/DT/SW        |
-| Belvin, Morgan                 | 201/803-1586 | AVS397/DT/SW        |
 | Bierman,Emmaline A             | 207/266-9069 | AVS397/DT/SW        |
 | Cote,Vanessa Marie             | 207/357-0994 | AVS397/DT/SW        |
 | Dau,Alyssa M                   | 207/381-6148 | AVS397/DT/SW        |
-| Dean,Kianna Lee                | 732/747-5613 | AVS397/DT/SW        |
+| Dean,Kianna Lee                | 732/682-7089 | AVS397/DT/SW        |
 | Dube,Bryanna M                 | 207/735-6337 | AVS397/DT/SW        |
-| Fludgate,Patrick               | 631/369-0910 | AVS397/DT/SW        |
+| Fludgate,Patrick               | 631/681-4577 | AVS397/DT/SW        |
 | Horvath,Cleo,Anastasia         | 201/686-6517 | AVS397/DT/SW        |
 | Knox,Emma Paula                | 774/320-5153 | AVS397/DT/SW        |
 | Parke,Jayci N                  | 207/852-6997 | AVS397/DT/SW        |
@@ -23,12 +22,12 @@ UMaine Equine Cooparitive Fall 2021 Contact List
 | Robinson,Anna M                | 207/227-2219 | AVS397/DT/SW        |
 | Rutherford,Alexis Mabel        | 207/745-9125 | AVS397/DT/SW        |
 | Schnaitmann,Elizabeth M        | 203/445-3311 | AVS397/DT/SW        |
-| Siliato,Sophia Marie           | 845/621-7633 | AVS397/DT/SW        |
+| Siliato,Sophia Marie           | 845/200-9820 | AVS397/DT/SW        |
 | Slater,Abigail                 | 740/641-6902 | AVS397/DT/SW        |
-| Sullivan,Natalie Elizabeth     | 978/258-0548 | AVS397/DT/SW        |
+| Sullivan,Natalie Elizabeth     | 781/870-7280 | AVS397/DT/SW        |
 | Wood,Cassondra M               | 207/616-8175 | AVS397/DT/SW        |
 | Anderson,Bonnie Elizabeth      | 603/831-3219 | AVS303              |
-| Ballman,Elissa S               | 320/217-1140 | AVS303              |
+| Ballman,Elissa S               | 207/300-7428 | AVS303              |
 | Bamberger,Rae Signe            | 207 841 2008 | AVS303              |
 | Bourdon,Sarina                 | 603/809-0088 | AVS303              |
 | Bulley,Aria Irene              | 207/631-9728 | AVS303              |
@@ -68,3 +67,4 @@ UMaine Equine Cooparitive Fall 2021 Contact List
 | Scruton,Taylor R               | 774/217-2452 | AVS196              |
 | Stavneak,Kaleb J               | 402/210-4270 | AVS196              |
 +--------------------------------+--------------+---------------------+
+
