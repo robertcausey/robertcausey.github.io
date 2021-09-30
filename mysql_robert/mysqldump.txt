@@ -1,7 +1,0 @@
-TO BACK UP DATA AS .sql file to be imported into xampp on surface pro or any computer
-[robert@localhost mysql_robert]$ mysqldump -u root -p horsebarn2 > horsebarn2.sql
-Enter password: 
-[robert@localhost mysql_robert]$ cat horsebarn2.sql  <--------------To see sql file
-[robert@localhost mysql_robert]$ vim horsebarn2.sql  <--------------To edit sql file to fix collation
-
-%s/0900_ai/general/g   <------------------Code after command line : in vim to fix collation for import to surface pro

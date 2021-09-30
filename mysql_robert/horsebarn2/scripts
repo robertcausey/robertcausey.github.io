@@ -1,1 +1,0 @@
-CREATE TABLE fall2021 (student_id VARCHAR(10), name VARCHAR(30), phone VARCHAR(12), email VARCHAR(40), class VARCHAR(20));
