@@ -1,0 +1,13 @@
+	body {color:black;font-size:25px;}
+
+	h1 { counter-reset: section; }
+	h2 { counter-reset: subsection; }
+	h2::before {
+		content: counter(section) ". ";
+		counter-increment: section;
+}
+	h3::before {
+		content: counter(section) "." counter(subsection) " ";
+		counter-increment: subsection;	
+}
+ a {color: DarkMagenta;}
